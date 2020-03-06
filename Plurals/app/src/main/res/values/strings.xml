@@ -13,4 +13,7 @@
     <string name="menu_tools">Rate</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">About Us</string>
+
+    <string name="facebook_app_id">139060064069322</string>
+    <string name="fb_login_protocol_scheme">fb139060064069322</string>
 </resources>

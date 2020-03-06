@@ -1,10 +1,12 @@
-package com.animesh.plurals;
+package com.animesh.plurals.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.animesh.plurals.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -17,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
     }
     private Runnable mUpdateTimeTask = new Runnable() {
         public void run() {
-            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
             finish();
         }
