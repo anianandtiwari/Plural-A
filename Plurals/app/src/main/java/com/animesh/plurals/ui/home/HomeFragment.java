@@ -88,6 +88,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 CommonUtils.startWebViewActivity(getActivity(),Constants.WEBSITE_URL);
                 break;
             case R.id.cv_youtube:
+                ut = getOpenYoutubeIntent(context);
+                startActivity(ut);
                 break;
 
 
@@ -118,6 +120,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         try {
             // Get Twitter app
             context.getPackageManager().getPackageInfo("com.twitter.android", 0);
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse(id));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            return intent;
+        } catch (Exception e) {
+            // If no Twitter app found, open on browser
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse(id));
+            return intent;
+        }
+    }
+
+    public static Intent getOpenYoutubeIntent(Context context) {
+        Log.d("click","Youtube click ");
+        String id = "https://www.youtube.com/channel/UCDI8o1h8Zq_JKRPaPdmHdLQ";
+        Intent intent = null;
+        try {
+            // Get Twitter app
+            context.getPackageManager().getPackageInfo("com.google.android.youtube", 0);
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse(id));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             return intent;
