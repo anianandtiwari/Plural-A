@@ -16,6 +16,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:id="@+id/cv_about"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="26dp"
@@ -69,10 +70,10 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/fb_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-30dp"
+                android:id="@+id/cv_fb"
                 android:layout_marginTop="26dp"
                 android:layout_marginRight="50dp"
                 app:cardBackgroundColor="#45619d"
@@ -111,12 +112,13 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/twitter_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="-30dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="26dp"
+                android:id="@+id/cv_twitter"
+
                 app:cardBackgroundColor="#50ABF1"
                 app:cardCornerRadius="30dp">
 
@@ -157,11 +159,12 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/youtube_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-30dp"
                 android:layout_marginTop="26dp"
+                android:id="@+id/cv_youtube"
+
                 android:layout_marginRight="50dp"
                 app:cardBackgroundColor="#D22215"
                 app:cardCornerRadius="30dp">

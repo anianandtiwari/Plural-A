@@ -3,6 +3,7 @@ package com.animesh.plurals.ui.home;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,7 +19,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.animesh.plurals.Activity.WebviewActivity;
 import com.animesh.plurals.R;
+import com.animesh.plurals.Utility.CommonUtils;
+import com.animesh.plurals.Utility.Constants;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
@@ -35,33 +39,31 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        fb_card = root.findViewById(R.id.fb_card);
-        fb_card.setOnClickListener(this);
-        twi_card = root.findViewById(R.id.twitter_card);
-        twi_card.setOnClickListener(this);
-        utube_card = root.findViewById(R.id.youtube_card);
-        utube_card.setOnClickListener(this);
-        utube_icon = root.findViewById(R.id.youtube_icon);
-        utube_icon.setOnClickListener(this);
-        fb_icon = root.findViewById(R.id.fb_icon);
-        fb_icon.setOnClickListener(this);
-        twi_icon = root.findViewById(R.id.twitter_icon);
-        twi_icon.setOnClickListener(this);
-        fb_text = root.findViewById(R.id.fb_text);
-        fb_text.setOnClickListener(this);
-        twitter_text = root.findViewById(R.id.twitter_text);
-        twitter_text.setOnClickListener(this);
-        utube_text = root.findViewById(R.id.youtube_text);
-        utube_text.setOnClickListener(this);
 
-//        homeViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
         return root;
     }
+
+    CardView cv_youtube, cv_fb, cv_twitter, cv_about;
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        cv_youtube = view.findViewById(R.id.cv_youtube);
+        cv_fb = view.findViewById(R.id.cv_fb);
+        cv_twitter = view.findViewById(R.id.cv_twitter);
+        cv_about = view.findViewById(R.id.cv_about);
+
+        cv_about.setOnClickListener(this);
+        cv_twitter.setOnClickListener(this);
+        cv_fb.setOnClickListener(this);
+        cv_youtube.setOnClickListener(this);
+
+    }
+
+
+
+
 
     @Override
     public void onClick(View v) {
@@ -71,36 +73,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch (v.getId())
         {
 
-            case R.id.fb_text:
+            case R.id.cv_fb:
                 fb = getOpenFacebookIntent(context);
                 startActivity(fb);
                 break;
-            case R.id.fb_icon:
-                fb = getOpenFacebookIntent(context);
-                startActivity(fb);
-                break;
-            case R.id.fb_card:
-                fb = getOpenFacebookIntent(context);
-                startActivity(fb);
-                break;
-            case R.id.twitter_card:
+
+            case R.id.cv_twitter:
                 tw = getOpenTwitterIntent(context);
                 startActivity(tw);
                 break;
-            case R.id.twitter_icon:
-                tw = getOpenTwitterIntent(context);
-                startActivity(tw);
+
+
+            case R.id.cv_about:
+                CommonUtils.startWebViewActivity(getActivity(),Constants.WEBSITE_URL);
                 break;
-            case R.id.twitter_text:
-                tw = getOpenTwitterIntent(context);
-                startActivity(tw);
+            case R.id.cv_youtube:
                 break;
-            case R.id.youtube_card:
-                break;
-            case R.id.youtube_icon:
-                break;
-            case R.id.youtube_text:
-                break;
+
 
         }
     }
