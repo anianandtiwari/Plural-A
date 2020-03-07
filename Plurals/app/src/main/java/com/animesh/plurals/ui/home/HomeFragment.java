@@ -35,7 +35,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        context = container.getContext();
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -74,12 +73,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         {
 
             case R.id.cv_fb:
-                fb = getOpenFacebookIntent(context);
+                fb = getOpenFacebookIntent(getActivity());
                 startActivity(fb);
                 break;
 
             case R.id.cv_twitter:
-                tw = getOpenTwitterIntent(context);
+                tw = getOpenTwitterIntent(getActivity());
                 startActivity(tw);
                 break;
 
@@ -99,7 +98,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public static Intent getOpenFacebookIntent(Context context ) {
         Log.d("click","fb click ");
-        String id = "https://www.facebook.com/pushpampc13/";
+        String id = Constants.FB_URL;
         try {
             Log.d("fb_app", "inside method");
             context.getPackageManager()
