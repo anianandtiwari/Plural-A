@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
     }
     private Runnable mUpdateTimeTask = new Runnable() {
         public void run() {
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();
         }
