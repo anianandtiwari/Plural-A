@@ -6,9 +6,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/p_logo"
+        android:icon="@mipmap/plural_circle"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/p_logo"
+        android:roundIcon="@mipmap/plural_square"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.WebviewActivity"></activity>
