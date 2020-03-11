@@ -1,0 +1,1948 @@
+{
+  "bihar": [
+    {
+      "AC_Id": "1",
+      "AC_Name": "Valmiki Nagar",
+      "PC_Id": "1",
+      "PC_Name": "Valmiki Nagar",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "2",
+      "AC_Name": "Ramnagar (SC)",
+      "PC_Id": "1",
+      "PC_Name": "Valmiki Nagar",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "3",
+      "AC_Name": "Narkatiaganj",
+      "PC_Id": "1",
+      "PC_Name": "Valmiki Nagar",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "4",
+      "AC_Name": "Bagaha",
+      "PC_Id": "1",
+      "PC_Name": "Valmiki Nagar",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "5",
+      "AC_Name": "Lauriya",
+      "PC_Id": "1",
+      "PC_Name": "Valmiki Nagar",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "6",
+      "AC_Name": "Nautan",
+      "PC_Id": "2",
+      "PC_Name": "Paschim Champaran",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "7",
+      "AC_Name": "Chanpatia",
+      "PC_Id": "2",
+      "PC_Name": "Paschim Champaran",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "8",
+      "AC_Name": "Bettiah",
+      "PC_Id": "2",
+      "PC_Name": "Paschim Champaran",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "9",
+      "AC_Name": "Sikta",
+      "PC_Id": "1",
+      "PC_Name": "Valmiki Nagar",
+      "Dist_Id": "1",
+      "Dist_Name": "Paschim Champaran"
+    },
+    {
+      "AC_Id": "10",
+      "AC_Name": "Raxaul",
+      "PC_Id": "2",
+      "PC_Name": "Paschim Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "11",
+      "AC_Name": "Sugauli",
+      "PC_Id": "2",
+      "PC_Name": "Paschim Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "12",
+      "AC_Name": "Narkatia",
+      "PC_Id": "2",
+      "PC_Name": "Paschim Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "13",
+      "AC_Name": "Harsidhi (SC)",
+      "PC_Id": "3",
+      "PC_Name": "Purvi Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "14",
+      "AC_Name": "Govindganj",
+      "PC_Id": "3",
+      "PC_Name": "Purvi Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "15",
+      "AC_Name": "Kesaria",
+      "PC_Id": "3",
+      "PC_Name": "Purvi Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "16",
+      "AC_Name": "Kalyanpur",
+      "PC_Id": "3",
+      "PC_Name": "Purvi Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "17",
+      "AC_Name": "Pipra",
+      "PC_Id": "3",
+      "PC_Name": "Purvi Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "18",
+      "AC_Name": "Madhuban",
+      "PC_Id": "4",
+      "PC_Name": "Seohar",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "19",
+      "AC_Name": "Motihari",
+      "PC_Id": "3",
+      "PC_Name": "Purvi Champaran",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "20",
+      "AC_Name": "Chiraia",
+      "PC_Id": "4",
+      "PC_Name": "Seohar",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "21",
+      "AC_Name": "Dhaka",
+      "PC_Id": "4",
+      "PC_Name": "Seohar",
+      "Dist_Id": "2",
+      "Dist_Name": "Purvi Champaran"
+    },
+    {
+      "AC_Id": "22",
+      "AC_Name": "Sheohar",
+      "PC_Id": "4",
+      "PC_Name": "Seohar",
+      "Dist_Id": "3",
+      "Dist_Name": "Sheohar"
+    },
+    {
+      "AC_Id": "23",
+      "AC_Name": "Riga",
+      "PC_Id": "4",
+      "PC_Name": "Seohar",
+      "Dist_Id": "4",
+      "Dist_Name": "Sitamarhi"
+    },
+    {
+      "AC_Id": "24",
+      "AC_Name": "Bathnaha (SC)",
+      "PC_Id": "5",
+      "PC_Name": "Sitamarhi",
+      "Dist_Id": "4",
+      "Dist_Name": "Sitamarhi"
+    },
+    {
+      "AC_Id": "25",
+      "AC_Name": "Parihar",
+      "PC_Id": "5",
+      "PC_Name": "Sitamarhi",
+      "Dist_Id": "4",
+      "Dist_Name": "Sitamarhi"
+    },
+    {
+      "AC_Id": "26",
+      "AC_Name": "Sursand",
+      "PC_Id": "5",
+      "PC_Name": "Sitamarhi",
+      "Dist_Id": "4",
+      "Dist_Name": "Sitamarhi"
+    },
+    {
+      "AC_Id": "27",
+      "AC_Name": "Bajpatti",
+      "PC_Id": "5",
+      "PC_Name": "Sitamarhi",
+      "Dist_Id": "4",
+      "Dist_Name": "Sitamarhi"
+    },
+    {
+      "AC_Id": "28",
+      "AC_Name": "Sitamarhi",
+      "PC_Id": "5",
+      "PC_Name": "Sitamarhi",
+      "Dist_Id": "4",
+      "Dist_Name": "Sitamarhi"
+    },
+    {
+      "AC_Id": "29",
+      "AC_Name": "Runisaidpur",
+      "PC_Id": "5",
+      "PC_Name": "Sitamarhi",
+      "Dist_Id": "4",
+      "Dist_Name": "Sitamarhi"
+    },
+    {
+      "AC_Id": "30",
+      "AC_Name": "Belsand",
+      "PC_Id": "4",
+      "PC_Name": "Seohar",
+      "Dist_Id": "4",
+      "Dist_Name": "Sitamarhi"
+    },
+    {
+      "AC_Id": "31",
+      "AC_Name": "Harlakhi",
+      "PC_Id": "6",
+      "PC_Name": "Madhubani",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "32",
+      "AC_Name": "Benipatti",
+      "PC_Id": "6",
+      "PC_Name": "Madhubani",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "33",
+      "AC_Name": "Khajauli",
+      "PC_Id": "7",
+      "PC_Name": "Jhanjharpur",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "34",
+      "AC_Name": "Babubarhi",
+      "PC_Id": "7",
+      "PC_Name": "Jhanjharpur",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "35",
+      "AC_Name": "Bisfi",
+      "PC_Id": "6",
+      "PC_Name": "Madhubani",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "36",
+      "AC_Name": "Madhubani",
+      "PC_Id": "6",
+      "PC_Name": "Madhubani",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "37",
+      "AC_Name": "Rajnagar (SC)",
+      "PC_Id": "7",
+      "PC_Name": "Jhanjharpur",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "38",
+      "AC_Name": "Jhanjharpur",
+      "PC_Id": "7",
+      "PC_Name": "Jhanjharpur",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "39",
+      "AC_Name": "Phulparas",
+      "PC_Id": "7",
+      "PC_Name": "Jhanjharpur",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "40",
+      "AC_Name": "Laukaha",
+      "PC_Id": "7",
+      "PC_Name": "Jhanjharpur",
+      "Dist_Id": "5",
+      "Dist_Name": "Madhubani"
+    },
+    {
+      "AC_Id": "41",
+      "AC_Name": "Nirmali",
+      "PC_Id": "8",
+      "PC_Name": "Supaul",
+      "Dist_Id": "6",
+      "Dist_Name": "Supaul"
+    },
+    {
+      "AC_Id": "42",
+      "AC_Name": "Pipra",
+      "PC_Id": "8",
+      "PC_Name": "Supaul",
+      "Dist_Id": "6",
+      "Dist_Name": "Supaul"
+    },
+    {
+      "AC_Id": "43",
+      "AC_Name": "Supaul",
+      "PC_Id": "8",
+      "PC_Name": "Supaul",
+      "Dist_Id": "6",
+      "Dist_Name": "Supaul"
+    },
+    {
+      "AC_Id": "44",
+      "AC_Name": "Triveniganj (SC)",
+      "PC_Id": "8",
+      "PC_Name": "Supaul",
+      "Dist_Id": "6",
+      "Dist_Name": "Supaul"
+    },
+    {
+      "AC_Id": "45",
+      "AC_Name": "Chhatapur",
+      "PC_Id": "8",
+      "PC_Name": "Supaul",
+      "Dist_Id": "6",
+      "Dist_Name": "Supaul"
+    },
+    {
+      "AC_Id": "46",
+      "AC_Name": "Narpatganj",
+      "PC_Id": "9",
+      "PC_Name": "Araria",
+      "Dist_Id": "7",
+      "Dist_Name": "Araria"
+    },
+    {
+      "AC_Id": "47",
+      "AC_Name": "Raniganj (SC)",
+      "PC_Id": "9",
+      "PC_Name": "Araria",
+      "Dist_Id": "7",
+      "Dist_Name": "Araria"
+    },
+    {
+      "AC_Id": "48",
+      "AC_Name": "Forbesganj",
+      "PC_Id": "9",
+      "PC_Name": "Araria",
+      "Dist_Id": "7",
+      "Dist_Name": "Araria"
+    },
+    {
+      "AC_Id": "49",
+      "AC_Name": "Araria",
+      "PC_Id": "9",
+      "PC_Name": "Araria",
+      "Dist_Id": "7",
+      "Dist_Name": "Araria"
+    },
+    {
+      "AC_Id": "50",
+      "AC_Name": "Jokihat",
+      "PC_Id": "9",
+      "PC_Name": "Araria",
+      "Dist_Id": "7",
+      "Dist_Name": "Araria"
+    },
+    {
+      "AC_Id": "51",
+      "AC_Name": "Sikti",
+      "PC_Id": "9",
+      "PC_Name": "Araria",
+      "Dist_Id": "7",
+      "Dist_Name": "Araria"
+    },
+    {
+      "AC_Id": "52",
+      "AC_Name": "Bahadurganj",
+      "PC_Id": "10",
+      "PC_Name": "Kishanganj",
+      "Dist_Id": "8",
+      "Dist_Name": " Kishanganj"
+    },
+    {
+      "AC_Id": "53",
+      "AC_Name": "Thakurganj",
+      "PC_Id": "10",
+      "PC_Name": "Kishanganj",
+      "Dist_Id": "8",
+      "Dist_Name": " Kishanganj"
+    },
+    {
+      "AC_Id": "54",
+      "AC_Name": "Kishanganj",
+      "PC_Id": "10",
+      "PC_Name": "Kishanganj",
+      "Dist_Id": "8",
+      "Dist_Name": " Kishanganj"
+    },
+    {
+      "AC_Id": "55",
+      "AC_Name": "Kochadhaman",
+      "PC_Id": "10",
+      "PC_Name": "Kishanganj",
+      "Dist_Id": "8",
+      "Dist_Name": " Kishanganj"
+    },
+    {
+      "AC_Id": "56",
+      "AC_Name": "Amour",
+      "PC_Id": "10",
+      "PC_Name": "Kishanganj",
+      "Dist_Id": "9",
+      "Dist_Name": " Purnia"
+    },
+    {
+      "AC_Id": "57",
+      "AC_Name": "Baisi",
+      "PC_Id": "10",
+      "PC_Name": "Kishanganj",
+      "Dist_Id": "9",
+      "Dist_Name": " Purnia"
+    },
+    {
+      "AC_Id": "58",
+      "AC_Name": "Kasba",
+      "PC_Id": "12",
+      "PC_Name": "Purnia",
+      "Dist_Id": "9",
+      "Dist_Name": " Purnia"
+    },
+    {
+      "AC_Id": "59",
+      "AC_Name": "Banmankhi (SC)",
+      "PC_Id": "12",
+      "PC_Name": "Purnia",
+      "Dist_Id": "9",
+      "Dist_Name": " Purnia"
+    },
+    {
+      "AC_Id": "60",
+      "AC_Name": "Rupauli",
+      "PC_Id": "12",
+      "PC_Name": "Purnia",
+      "Dist_Id": "9",
+      "Dist_Name": " Purnia"
+    },
+    {
+      "AC_Id": "61",
+      "AC_Name": "Dhamdaha",
+      "PC_Id": "12",
+      "PC_Name": "Purnia",
+      "Dist_Id": "9",
+      "Dist_Name": " Purnia"
+    },
+    {
+      "AC_Id": "62",
+      "AC_Name": "Purnia",
+      "PC_Id": "12",
+      "PC_Name": "Purnia",
+      "Dist_Id": "9",
+      "Dist_Name": " Purnia"
+    },
+    {
+      "AC_Id": "63",
+      "AC_Name": "Katihar",
+      "PC_Id": "11",
+      "PC_Name": "Katihar",
+      "Dist_Id": "10",
+      "Dist_Name": "Katihar"
+    },
+    {
+      "AC_Id": "64",
+      "AC_Name": "Kadwa",
+      "PC_Id": "11",
+      "PC_Name": "Katihar",
+      "Dist_Id": "10",
+      "Dist_Name": "Katihar"
+    },
+    {
+      "AC_Id": "65",
+      "AC_Name": "Balrampur",
+      "PC_Id": "11",
+      "PC_Name": "Katihar",
+      "Dist_Id": "10",
+      "Dist_Name": "Katihar"
+    },
+    {
+      "AC_Id": "66",
+      "AC_Name": "Pranpur",
+      "PC_Id": "11",
+      "PC_Name": "Katihar",
+      "Dist_Id": "10",
+      "Dist_Name": "Katihar"
+    },
+    {
+      "AC_Id": "67",
+      "AC_Name": "Manihari (ST)",
+      "PC_Id": "11",
+      "PC_Name": "Katihar",
+      "Dist_Id": "10",
+      "Dist_Name": "Katihar"
+    },
+    {
+      "AC_Id": "68",
+      "AC_Name": "Barari",
+      "PC_Id": "11",
+      "PC_Name": "Katihar",
+      "Dist_Id": "10",
+      "Dist_Name": "Katihar"
+    },
+    {
+      "AC_Id": "69",
+      "AC_Name": "Korha (SC)",
+      "PC_Id": "12",
+      "PC_Name": "Purnia",
+      "Dist_Id": "10",
+      "Dist_Name": "Katihar"
+    },
+    {
+      "AC_Id": "70",
+      "AC_Name": "Alamnagar",
+      "PC_Id": "13",
+      "PC_Name": "Madhepura",
+      "Dist_Id": "11",
+      "Dist_Name": "Madhepura"
+    },
+    {
+      "AC_Id": "71",
+      "AC_Name": "Bihariganj",
+      "PC_Id": "13",
+      "PC_Name": "Madhepura",
+      "Dist_Id": "11",
+      "Dist_Name": "Madhepura"
+    },
+    {
+      "AC_Id": "72",
+      "AC_Name": "Singheshwar (SC)",
+      "PC_Id": "8",
+      "PC_Name": "Supaul",
+      "Dist_Id": "11",
+      "Dist_Name": "Madhepura"
+    },
+    {
+      "AC_Id": "73",
+      "AC_Name": "Madhepura",
+      "PC_Id": "13",
+      "PC_Name": "Madhepura",
+      "Dist_Id": "11",
+      "Dist_Name": "Madhepura"
+    },
+    {
+      "AC_Id": "74",
+      "AC_Name": "Sonbarsha (SC)",
+      "PC_Id": "13",
+      "PC_Name": "Madhepura",
+      "Dist_Id": "12",
+      "Dist_Name": "Saharsa"
+    },
+    {
+      "AC_Id": "75",
+      "AC_Name": "Saharsa",
+      "PC_Id": "13",
+      "PC_Name": "Madhepura",
+      "Dist_Id": "12",
+      "Dist_Name": "Saharsa"
+    },
+    {
+      "AC_Id": "76",
+      "AC_Name": "Simri Bakhtiarpur",
+      "PC_Id": "25",
+      "PC_Name": "Khagaria",
+      "Dist_Id": "12",
+      "Dist_Name": "Saharsa"
+    },
+    {
+      "AC_Id": "77",
+      "AC_Name": "Mahishi",
+      "PC_Id": "13",
+      "PC_Name": "Madhepura",
+      "Dist_Id": "12",
+      "Dist_Name": "Saharsa"
+    },
+    {
+      "AC_Id": "78",
+      "AC_Name": "Kusheshwar Asthan (SC)",
+      "PC_Id": "23",
+      "PC_Name": "Samastipur (SC)",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "79",
+      "AC_Name": "Gaura Bauram",
+      "PC_Id": "14",
+      "PC_Name": "Darbhanga",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "80",
+      "AC_Name": "Benipur",
+      "PC_Id": "14",
+      "PC_Name": "Darbhanga",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "81",
+      "AC_Name": "Alinagar",
+      "PC_Id": "14",
+      "PC_Name": "Darbhanga",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "82",
+      "AC_Name": "Darbhanga Rural",
+      "PC_Id": "14",
+      "PC_Name": "Darbhanga",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "83",
+      "AC_Name": "Darbhanga",
+      "PC_Id": "14",
+      "PC_Name": "Darbhanga",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "84",
+      "AC_Name": "Hayaghat",
+      "PC_Id": "23",
+      "PC_Name": "Samastipur (SC)",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "85",
+      "AC_Name": "Bahadurpur",
+      "PC_Id": "14",
+      "PC_Name": "Darbhanga",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "86",
+      "AC_Name": "Keoti",
+      "PC_Id": "6",
+      "PC_Name": "Madhubani",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "87",
+      "AC_Name": "Jale",
+      "PC_Id": "6",
+      "PC_Name": "Madhubani",
+      "Dist_Id": "13",
+      "Dist_Name": "Darbhanga"
+    },
+    {
+      "AC_Id": "88",
+      "AC_Name": "Gaighat",
+      "PC_Id": "15",
+      "PC_Name": "Muzaffarpur",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "89",
+      "AC_Name": "Aurai",
+      "PC_Id": "15",
+      "PC_Name": "Muzaffarpur",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "90",
+      "AC_Name": "Minapur",
+      "PC_Id": "16",
+      "PC_Name": "Vaishali",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "91",
+      "AC_Name": "Bochaha (SC)",
+      "PC_Id": "15",
+      "PC_Name": "Muzaffarpur",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "92",
+      "AC_Name": "Sakra (SC)",
+      "PC_Id": "15",
+      "PC_Name": "Muzaffarpur",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "93",
+      "AC_Name": "Kurhani",
+      "PC_Id": "15",
+      "PC_Name": "Muzaffarpur",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "94",
+      "AC_Name": "Muzaffarpur",
+      "PC_Id": "15",
+      "PC_Name": "Muzaffarpur",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "95",
+      "AC_Name": "Kanti",
+      "PC_Id": "16",
+      "PC_Name": "Vaishali",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "96",
+      "AC_Name": "Baruraj",
+      "PC_Id": "16",
+      "PC_Name": "Vaishali",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "97",
+      "AC_Name": "Paroo",
+      "PC_Id": "16",
+      "PC_Name": "Vaishali",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "98",
+      "AC_Name": "Sahebganj",
+      "PC_Id": "16",
+      "PC_Name": "Vaishali",
+      "Dist_Id": "14",
+      "Dist_Name": "Muzaffarpur"
+    },
+    {
+      "AC_Id": "99",
+      "AC_Name": "Baikunthpur",
+      "PC_Id": "17",
+      "PC_Name": "Gopalganj (SC)",
+      "Dist_Id": "15",
+      "Dist_Name": "Gopalganj"
+    },
+    {
+      "AC_Id": "100",
+      "AC_Name": "Barauli",
+      "PC_Id": "17",
+      "PC_Name": "Gopalganj (SC)",
+      "Dist_Id": "15",
+      "Dist_Name": "Gopalganj"
+    },
+    {
+      "AC_Id": "101",
+      "AC_Name": "Gopalganj",
+      "PC_Id": "17",
+      "PC_Name": "Gopalganj (SC)",
+      "Dist_Id": "15",
+      "Dist_Name": "Gopalganj"
+    },
+    {
+      "AC_Id": "102",
+      "AC_Name": "Kuchaikote",
+      "PC_Id": "17",
+      "PC_Name": "Gopalganj (SC)",
+      "Dist_Id": "15",
+      "Dist_Name": "Gopalganj"
+    },
+    {
+      "AC_Id": "103",
+      "AC_Name": "Bhorey (SC)",
+      "PC_Id": "17",
+      "PC_Name": "Gopalganj (SC)",
+      "Dist_Id": "15",
+      "Dist_Name": "Gopalganj"
+    },
+    {
+      "AC_Id": "104",
+      "AC_Name": "Hathua",
+      "PC_Id": "17",
+      "PC_Name": "Gopalganj (SC)",
+      "Dist_Id": "15",
+      "Dist_Name": "Gopalganj"
+    },
+    {
+      "AC_Id": "105",
+      "AC_Name": "Siwan",
+      "PC_Id": "18",
+      "PC_Name": "Siwan",
+      "Dist_Id": "16",
+      "Dist_Name": "Siwan"
+    },
+    {
+      "AC_Id": "106",
+      "AC_Name": "Ziradei",
+      "PC_Id": "18",
+      "PC_Name": "Siwan",
+      "Dist_Id": "16",
+      "Dist_Name": "Siwan"
+    },
+    {
+      "AC_Id": "107",
+      "AC_Name": "Darauli (SC)",
+      "PC_Id": "18",
+      "PC_Name": "Siwan",
+      "Dist_Id": "16",
+      "Dist_Name": "Siwan"
+    },
+    {
+      "AC_Id": "108",
+      "AC_Name": "Raghunathpur",
+      "PC_Id": "18",
+      "PC_Name": "Siwan",
+      "Dist_Id": "16",
+      "Dist_Name": "Siwan"
+    },
+    {
+      "AC_Id": "109",
+      "AC_Name": "Daraundha",
+      "PC_Id": "18",
+      "PC_Name": "Siwan",
+      "Dist_Id": "16",
+      "Dist_Name": "Siwan"
+    },
+    {
+      "AC_Id": "110",
+      "AC_Name": "Barharia",
+      "PC_Id": "18",
+      "PC_Name": "Siwan",
+      "Dist_Id": "16",
+      "Dist_Name": "Siwan"
+    },
+    {
+      "AC_Id": "111",
+      "AC_Name": "Goriakothi",
+      "PC_Id": "19",
+      "PC_Name": "Maharajganj",
+      "Dist_Id": "16",
+      "Dist_Name": "Siwan"
+    },
+    {
+      "AC_Id": "112",
+      "AC_Name": "Maharajganj",
+      "PC_Id": "19",
+      "PC_Name": "Maharajganj",
+      "Dist_Id": "16",
+      "Dist_Name": "Siwan"
+    },
+    {
+      "AC_Id": "113",
+      "AC_Name": "Ekma",
+      "PC_Id": "19",
+      "PC_Name": "Maharajganj",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "114",
+      "AC_Name": "Manjhi",
+      "PC_Id": "19",
+      "PC_Name": "Maharajganj",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "115",
+      "AC_Name": "Baniapur",
+      "PC_Id": "19",
+      "PC_Name": "Maharajganj",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "116",
+      "AC_Name": "Taraiya",
+      "PC_Id": "19",
+      "PC_Name": "Maharajganj",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "117",
+      "AC_Name": "Marhaura",
+      "PC_Id": "20",
+      "PC_Name": "Saran",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "118",
+      "AC_Name": "Chapra",
+      "PC_Id": "20",
+      "PC_Name": "Saran",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "119",
+      "AC_Name": "Garkha (SC)",
+      "PC_Id": "20",
+      "PC_Name": "Saran",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "120",
+      "AC_Name": "Amnour",
+      "PC_Id": "20",
+      "PC_Name": "Saran",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "121",
+      "AC_Name": "Parsa",
+      "PC_Id": "20",
+      "PC_Name": "Saran",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "122",
+      "AC_Name": "Sonepur",
+      "PC_Id": "20",
+      "PC_Name": "Saran",
+      "Dist_Id": "17",
+      "Dist_Name": " Saran"
+    },
+    {
+      "AC_Id": "123",
+      "AC_Name": "Hajipur",
+      "PC_Id": "21",
+      "PC_Name": "Hajipur (SC)",
+      "Dist_Id": "18",
+      "Dist_Name": " Vaishali"
+    },
+    {
+      "AC_Id": "124",
+      "AC_Name": "Lalganj",
+      "PC_Id": "21",
+      "PC_Name": "Hajipur (SC)",
+      "Dist_Id": "18",
+      "Dist_Name": " Vaishali"
+    },
+    {
+      "AC_Id": "125",
+      "AC_Name": "Vaishali",
+      "PC_Id": "16",
+      "PC_Name": "Vaishali",
+      "Dist_Id": "18",
+      "Dist_Name": " Vaishali"
+    },
+    {
+      "AC_Id": "126",
+      "AC_Name": "Mahua",
+      "PC_Id": "21",
+      "PC_Name": "Hajipur (SC)",
+      "Dist_Id": "18",
+      "Dist_Name": " Vaishali"
+    },
+    {
+      "AC_Id": "127",
+      "AC_Name": "Raja Pakar (SC)",
+      "PC_Id": "21",
+      "PC_Name": "Hajipur (SC)",
+      "Dist_Id": "18",
+      "Dist_Name": " Vaishali"
+    },
+    {
+      "AC_Id": "128",
+      "AC_Name": "Raghopur",
+      "PC_Id": "21",
+      "PC_Name": "Hajipur (SC)",
+      "Dist_Id": "18",
+      "Dist_Name": " Vaishali"
+    },
+    {
+      "AC_Id": "129",
+      "AC_Name": "Mahnar",
+      "PC_Id": "21",
+      "PC_Name": "Hajipur (SC)",
+      "Dist_Id": "18",
+      "Dist_Name": " Vaishali"
+    },
+    {
+      "AC_Id": "130",
+      "AC_Name": "Patepur (SC)",
+      "PC_Id": "22",
+      "PC_Name": "Ujiarpur",
+      "Dist_Id": "18",
+      "Dist_Name": " Vaishali"
+    },
+    {
+      "AC_Id": "131",
+      "AC_Name": "Kalyanpur (SC)",
+      "PC_Id": "23",
+      "PC_Name": "Samastipur (SC)",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "132",
+      "AC_Name": "Warisnagar",
+      "PC_Id": "23",
+      "PC_Name": "Samastipur (SC)",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "133",
+      "AC_Name": "Samastipur",
+      "PC_Id": "23",
+      "PC_Name": "Samastipur (SC)",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "134",
+      "AC_Name": "Ujiarpur",
+      "PC_Id": "22",
+      "PC_Name": "Ujiarpur",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "135",
+      "AC_Name": "Morwa",
+      "PC_Id": "22",
+      "PC_Name": "Ujiarpur",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "136",
+      "AC_Name": "Sarairanjan",
+      "PC_Id": "22",
+      "PC_Name": "Ujiarpur",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "137",
+      "AC_Name": "Mohiuddinnagar",
+      "PC_Id": "22",
+      "PC_Name": "Ujiarpur",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "138",
+      "AC_Name": "Bibhutpur",
+      "PC_Id": "22",
+      "PC_Name": "Ujiarpur",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "139",
+      "AC_Name": "Rosera (SC)",
+      "PC_Id": "23",
+      "PC_Name": "Samastipur (SC)",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "140",
+      "AC_Name": "Hasanpur",
+      "PC_Id": "25",
+      "PC_Name": "Khagaria",
+      "Dist_Id": "19",
+      "Dist_Name": "Samastipur"
+    },
+    {
+      "AC_Id": "141",
+      "AC_Name": "Cheria Bariarpur",
+      "PC_Id": "24",
+      "PC_Name": "Begusarai",
+      "Dist_Id": "20",
+      "Dist_Name": "Begusarai"
+    },
+    {
+      "AC_Id": "142",
+      "AC_Name": "Bachhwara",
+      "PC_Id": "24",
+      "PC_Name": "Begusarai",
+      "Dist_Id": "20",
+      "Dist_Name": "Begusarai"
+    },
+    {
+      "AC_Id": "143",
+      "AC_Name": "Teghra",
+      "PC_Id": "24",
+      "PC_Name": "Begusarai",
+      "Dist_Id": "20",
+      "Dist_Name": "Begusarai"
+    },
+    {
+      "AC_Id": "144",
+      "AC_Name": "Matihani",
+      "PC_Id": "24",
+      "PC_Name": "Begusarai",
+      "Dist_Id": "20",
+      "Dist_Name": "Begusarai"
+    },
+    {
+      "AC_Id": "145",
+      "AC_Name": "Sahebpur Kamal",
+      "PC_Id": "24",
+      "PC_Name": "Begusarai",
+      "Dist_Id": "20",
+      "Dist_Name": "Begusarai"
+    },
+    {
+      "AC_Id": "146",
+      "AC_Name": "Begusarai",
+      "PC_Id": "24",
+      "PC_Name": "Begusarai",
+      "Dist_Id": "20",
+      "Dist_Name": "Begusarai"
+    },
+    {
+      "AC_Id": "147",
+      "AC_Name": "Bakhri (SC)",
+      "PC_Id": "24",
+      "PC_Name": "Begusarai",
+      "Dist_Id": "20",
+      "Dist_Name": "Begusarai"
+    },
+    {
+      "AC_Id": "148",
+      "AC_Name": "Alauli (SC)",
+      "PC_Id": "25",
+      "PC_Name": "Khagaria",
+      "Dist_Id": "21",
+      "Dist_Name": "Khagaria"
+    },
+    {
+      "AC_Id": "149",
+      "AC_Name": "Khagaria",
+      "PC_Id": "25",
+      "PC_Name": "Khagaria",
+      "Dist_Id": "21",
+      "Dist_Name": "Khagaria"
+    },
+    {
+      "AC_Id": "150",
+      "AC_Name": "Beldaur",
+      "PC_Id": "25",
+      "PC_Name": "Khagaria",
+      "Dist_Id": "21",
+      "Dist_Name": "Khagaria"
+    },
+    {
+      "AC_Id": "151",
+      "AC_Name": "Parbatta",
+      "PC_Id": "25",
+      "PC_Name": "Khagaria",
+      "Dist_Id": "21",
+      "Dist_Name": "Khagaria"
+    },
+    {
+      "AC_Id": "152",
+      "AC_Name": "Bihpur",
+      "PC_Id": "26",
+      "PC_Name": "Bhagalpur",
+      "Dist_Id": "22",
+      "Dist_Name": "Bhagalpur"
+    },
+    {
+      "AC_Id": "153",
+      "AC_Name": "Gopalpur",
+      "PC_Id": "26",
+      "PC_Name": "Bhagalpur",
+      "Dist_Id": "22",
+      "Dist_Name": "Bhagalpur"
+    },
+    {
+      "AC_Id": "154",
+      "AC_Name": "Pirpainti (SC)",
+      "PC_Id": "26",
+      "PC_Name": "Bhagalpur",
+      "Dist_Id": "22",
+      "Dist_Name": "Bhagalpur"
+    },
+    {
+      "AC_Id": "155",
+      "AC_Name": "Kahalgaon",
+      "PC_Id": "26",
+      "PC_Name": "Bhagalpur",
+      "Dist_Id": "22",
+      "Dist_Name": "Bhagalpur"
+    },
+    {
+      "AC_Id": "156",
+      "AC_Name": "Bhagalpur",
+      "PC_Id": "26",
+      "PC_Name": "Bhagalpur",
+      "Dist_Id": "22",
+      "Dist_Name": "Bhagalpur"
+    },
+    {
+      "AC_Id": "157",
+      "AC_Name": "Sultanganj",
+      "PC_Id": "27",
+      "PC_Name": "Banka",
+      "Dist_Id": "22",
+      "Dist_Name": "Bhagalpur"
+    },
+    {
+      "AC_Id": "158",
+      "AC_Name": "Nathnagar",
+      "PC_Id": "26",
+      "PC_Name": "Bhagalpur",
+      "Dist_Id": "22",
+      "Dist_Name": "Bhagalpur"
+    },
+    {
+      "AC_Id": "159",
+      "AC_Name": "Amarpur",
+      "PC_Id": "27",
+      "PC_Name": "Banka",
+      "Dist_Id": "23",
+      "Dist_Name": "Banka"
+    },
+    {
+      "AC_Id": "160",
+      "AC_Name": "Dhuraiya (SC)",
+      "PC_Id": "27",
+      "PC_Name": "Banka",
+      "Dist_Id": "23",
+      "Dist_Name": "Banka"
+    },
+    {
+      "AC_Id": "161",
+      "AC_Name": "Banka",
+      "PC_Id": "27",
+      "PC_Name": "Banka",
+      "Dist_Id": "23",
+      "Dist_Name": "Banka"
+    },
+    {
+      "AC_Id": "162",
+      "AC_Name": "Katoria (ST)",
+      "PC_Id": "27",
+      "PC_Name": "Banka",
+      "Dist_Id": "23",
+      "Dist_Name": "Banka"
+    },
+    {
+      "AC_Id": "163",
+      "AC_Name": "Belhar",
+      "PC_Id": "27",
+      "PC_Name": "Banka",
+      "Dist_Id": "23",
+      "Dist_Name": "Banka"
+    },
+    {
+      "AC_Id": "164",
+      "AC_Name": "Tarapur",
+      "PC_Id": "40",
+      "PC_Name": "Jamui (SC)",
+      "Dist_Id": "24",
+      "Dist_Name": "Munger"
+    },
+    {
+      "AC_Id": "165",
+      "AC_Name": "Munger",
+      "PC_Id": "28",
+      "PC_Name": "Munger",
+      "Dist_Id": "24",
+      "Dist_Name": "Munger"
+    },
+    {
+      "AC_Id": "166",
+      "AC_Name": "Jamalpur",
+      "PC_Id": "28",
+      "PC_Name": "Munger",
+      "Dist_Id": "24",
+      "Dist_Name": "Munger"
+    },
+    {
+      "AC_Id": "167",
+      "AC_Name": "Suryagarha",
+      "PC_Id": "28",
+      "PC_Name": "Munger",
+      "Dist_Id": "25",
+      "Dist_Name": " Lakhisarai"
+    },
+    {
+      "AC_Id": "168",
+      "AC_Name": "Lakhisarai",
+      "PC_Id": "28",
+      "PC_Name": "Munger",
+      "Dist_Id": "25",
+      "Dist_Name": " Lakhisarai"
+    },
+    {
+      "AC_Id": "169",
+      "AC_Name": "Sheikhpura",
+      "PC_Id": "40",
+      "PC_Name": "Jamui (SC)",
+      "Dist_Id": "26",
+      "Dist_Name": "Sheikhpura"
+    },
+    {
+      "AC_Id": "170",
+      "AC_Name": "Barbigha",
+      "PC_Id": "39",
+      "PC_Name": "Nawada",
+      "Dist_Id": "26",
+      "Dist_Name": "Sheikhpura"
+    },
+    {
+      "AC_Id": "171",
+      "AC_Name": "Asthawan",
+      "PC_Id": "29",
+      "PC_Name": "Nalanda",
+      "Dist_Id": "27",
+      "Dist_Name": "Nalanda"
+    },
+    {
+      "AC_Id": "172",
+      "AC_Name": "Biharsharif",
+      "PC_Id": "29",
+      "PC_Name": "Nalanda",
+      "Dist_Id": "27",
+      "Dist_Name": "Nalanda"
+    },
+    {
+      "AC_Id": "173",
+      "AC_Name": "Rajgir (SC)",
+      "PC_Id": "29",
+      "PC_Name": "Nalanda",
+      "Dist_Id": "27",
+      "Dist_Name": "Nalanda"
+    },
+    {
+      "AC_Id": "174",
+      "AC_Name": "Islampur",
+      "PC_Id": "29",
+      "PC_Name": "Nalanda",
+      "Dist_Id": "27",
+      "Dist_Name": "Nalanda"
+    },
+    {
+      "AC_Id": "175",
+      "AC_Name": "Hilsa",
+      "PC_Id": "29",
+      "PC_Name": "Nalanda",
+      "Dist_Id": "27",
+      "Dist_Name": "Nalanda"
+    },
+    {
+      "AC_Id": "176",
+      "AC_Name": "Nalanda",
+      "PC_Id": "29",
+      "PC_Name": "Nalanda",
+      "Dist_Id": "27",
+      "Dist_Name": "Nalanda"
+    },
+    {
+      "AC_Id": "177",
+      "AC_Name": "Harnaut",
+      "PC_Id": "29",
+      "PC_Name": "Nalanda",
+      "Dist_Id": "27",
+      "Dist_Name": "Nalanda"
+    },
+    {
+      "AC_Id": "178",
+      "AC_Name": "Mokama",
+      "PC_Id": "28",
+      "PC_Name": "Munger",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "179",
+      "AC_Name": "Barh",
+      "PC_Id": "28",
+      "PC_Name": "Munger",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "180",
+      "AC_Name": "Bakhtiarpur",
+      "PC_Id": "30",
+      "PC_Name": "Patna Sahib",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "181",
+      "AC_Name": "Digha",
+      "PC_Id": "30",
+      "PC_Name": "Patna Sahib",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "182",
+      "AC_Name": "Bankipur",
+      "PC_Id": "30",
+      "PC_Name": "Patna Sahib",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "183",
+      "AC_Name": "Kumhrar",
+      "PC_Id": "30",
+      "PC_Name": "Patna Sahib",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "184",
+      "AC_Name": "Patna Sahib",
+      "PC_Id": "30",
+      "PC_Name": "Patna Sahib",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "185",
+      "AC_Name": "Fatwah",
+      "PC_Id": "30",
+      "PC_Name": "Patna Sahib",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "186",
+      "AC_Name": "Danapur",
+      "PC_Id": "31",
+      "PC_Name": "Pataliputra",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "187",
+      "AC_Name": "Maner",
+      "PC_Id": "31",
+      "PC_Name": "Pataliputra",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "188",
+      "AC_Name": "Phulwari (SC)",
+      "PC_Id": "31",
+      "PC_Name": "Pataliputra",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "189",
+      "AC_Name": "Masaurhi (SC)",
+      "PC_Id": "31",
+      "PC_Name": "Pataliputra",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "190",
+      "AC_Name": "Paliganj",
+      "PC_Id": "31",
+      "PC_Name": "Pataliputra",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "191",
+      "AC_Name": "Bikram",
+      "PC_Id": "31",
+      "PC_Name": "Pataliputra",
+      "Dist_Id": "28",
+      "Dist_Name": " Patna"
+    },
+    {
+      "AC_Id": "192",
+      "AC_Name": "Sandesh",
+      "PC_Id": "32",
+      "PC_Name": "Arrah",
+      "Dist_Id": "29",
+      "Dist_Name": "Bhojpur"
+    },
+    {
+      "AC_Id": "193",
+      "AC_Name": "Barhara",
+      "PC_Id": "32",
+      "PC_Name": "Arrah",
+      "Dist_Id": "29",
+      "Dist_Name": "Bhojpur"
+    },
+    {
+      "AC_Id": "194",
+      "AC_Name": "Arrah",
+      "PC_Id": "32",
+      "PC_Name": "Arrah",
+      "Dist_Id": "29",
+      "Dist_Name": "Bhojpur"
+    },
+    {
+      "AC_Id": "195",
+      "AC_Name": "Agiaon (SC)",
+      "PC_Id": "32",
+      "PC_Name": "Arrah",
+      "Dist_Id": "29",
+      "Dist_Name": "Bhojpur"
+    },
+    {
+      "AC_Id": "196",
+      "AC_Name": "Tarari",
+      "PC_Id": "32",
+      "PC_Name": "Arrah",
+      "Dist_Id": "29",
+      "Dist_Name": "Bhojpur"
+    },
+    {
+      "AC_Id": "197",
+      "AC_Name": "Jagdishpur",
+      "PC_Id": "32",
+      "PC_Name": "Arrah",
+      "Dist_Id": "29",
+      "Dist_Name": "Bhojpur"
+    },
+    {
+      "AC_Id": "198",
+      "AC_Name": "Shahpur",
+      "PC_Id": "32",
+      "PC_Name": "Arrah",
+      "Dist_Id": "29",
+      "Dist_Name": "Bhojpur"
+    },
+    {
+      "AC_Id": "199",
+      "AC_Name": "Barhampur",
+      "PC_Id": "33",
+      "PC_Name": "Buxar",
+      "Dist_Id": "30",
+      "Dist_Name": "Buxar"
+    },
+    {
+      "AC_Id": "200",
+      "AC_Name": "Buxar",
+      "PC_Id": "33",
+      "PC_Name": "Buxar",
+      "Dist_Id": "30",
+      "Dist_Name": "Buxar"
+    },
+    {
+      "AC_Id": "201",
+      "AC_Name": "Dumraon",
+      "PC_Id": "33",
+      "PC_Name": "Buxar",
+      "Dist_Id": "30",
+      "Dist_Name": "Buxar"
+    },
+    {
+      "AC_Id": "202",
+      "AC_Name": "Rajpur (SC)",
+      "PC_Id": "33",
+      "PC_Name": "Buxar",
+      "Dist_Id": "30",
+      "Dist_Name": "Buxar"
+    },
+    {
+      "AC_Id": "203",
+      "AC_Name": "Ramgarh",
+      "PC_Id": "33",
+      "PC_Name": "Buxar",
+      "Dist_Id": "31",
+      "Dist_Name": " Kaimur (Bhabua)"
+    },
+    {
+      "AC_Id": "204",
+      "AC_Name": "Mohania (SC)",
+      "PC_Id": "34",
+      "PC_Name": "Sasaram (SC)",
+      "Dist_Id": "31",
+      "Dist_Name": " Kaimur (Bhabua)"
+    },
+    {
+      "AC_Id": "205",
+      "AC_Name": "Bhabua",
+      "PC_Id": "34",
+      "PC_Name": "Sasaram (SC)",
+      "Dist_Id": "31",
+      "Dist_Name": " Kaimur (Bhabua)"
+    },
+    {
+      "AC_Id": "206",
+      "AC_Name": "Chainpur",
+      "PC_Id": "34",
+      "PC_Name": "Sasaram (SC)",
+      "Dist_Id": "31",
+      "Dist_Name": " Kaimur (Bhabua)"
+    },
+    {
+      "AC_Id": "207",
+      "AC_Name": "Chenari (SC)",
+      "PC_Id": "34",
+      "PC_Name": "Sasaram (SC)",
+      "Dist_Id": "32",
+      "Dist_Name": "Rohtas"
+    },
+    {
+      "AC_Id": "208",
+      "AC_Name": "Sasaram",
+      "PC_Id": "34",
+      "PC_Name": "Sasaram (SC)",
+      "Dist_Id": "32",
+      "Dist_Name": "Rohtas"
+    },
+    {
+      "AC_Id": "209",
+      "AC_Name": "Kargahar",
+      "PC_Id": "34",
+      "PC_Name": "Sasaram (SC)",
+      "Dist_Id": "32",
+      "Dist_Name": "Rohtas"
+    },
+    {
+      "AC_Id": "210",
+      "AC_Name": "Dinara",
+      "PC_Id": "33",
+      "PC_Name": "Buxar",
+      "Dist_Id": "32",
+      "Dist_Name": "Rohtas"
+    },
+    {
+      "AC_Id": "211",
+      "AC_Name": "Nokha",
+      "PC_Id": "35",
+      "PC_Name": "Karakat",
+      "Dist_Id": "32",
+      "Dist_Name": "Rohtas"
+    },
+    {
+      "AC_Id": "212",
+      "AC_Name": "Dehri",
+      "PC_Id": "35",
+      "PC_Name": "Karakat",
+      "Dist_Id": "32",
+      "Dist_Name": "Rohtas"
+    },
+    {
+      "AC_Id": "213",
+      "AC_Name": "Karakat",
+      "PC_Id": "35",
+      "PC_Name": "Karakat",
+      "Dist_Id": "32",
+      "Dist_Name": "Rohtas"
+    },
+    {
+      "AC_Id": "214",
+      "AC_Name": "Arwal",
+      "PC_Id": "36",
+      "PC_Name": "Jahanabad",
+      "Dist_Id": "33",
+      "Dist_Name": " Arwal"
+    },
+    {
+      "AC_Id": "215",
+      "AC_Name": "Kurtha",
+      "PC_Id": "36",
+      "PC_Name": "Jahanabad",
+      "Dist_Id": "33",
+      "Dist_Name": " Arwal"
+    },
+    {
+      "AC_Id": "216",
+      "AC_Name": "Jehanabad",
+      "PC_Id": "36",
+      "PC_Name": "Jahanabad",
+      "Dist_Id": "34",
+      "Dist_Name": "Jahanabad"
+    },
+    {
+      "AC_Id": "217",
+      "AC_Name": "Ghosi",
+      "PC_Id": "36",
+      "PC_Name": "Jahanabad",
+      "Dist_Id": "34",
+      "Dist_Name": "Jahanabad"
+    },
+    {
+      "AC_Id": "218",
+      "AC_Name": "Makhdumpur(SC)",
+      "PC_Id": "36",
+      "PC_Name": "Jahanabad",
+      "Dist_Id": "34",
+      "Dist_Name": "Jahanabad"
+    },
+    {
+      "AC_Id": "219",
+      "AC_Name": "Goh",
+      "PC_Id": "35",
+      "PC_Name": "Karakat",
+      "Dist_Id": "35",
+      "Dist_Name": "Aurangabad"
+    },
+    {
+      "AC_Id": "220",
+      "AC_Name": "Obra",
+      "PC_Id": "35",
+      "PC_Name": "Karakat",
+      "Dist_Id": "35",
+      "Dist_Name": "Aurangabad"
+    },
+    {
+      "AC_Id": "221",
+      "AC_Name": "Nabinagar",
+      "PC_Id": "35",
+      "PC_Name": "Karakat",
+      "Dist_Id": "35",
+      "Dist_Name": "Aurangabad"
+    },
+    {
+      "AC_Id": "222",
+      "AC_Name": "Kutumba (SC)",
+      "PC_Id": "37",
+      "PC_Name": "Aurangabad",
+      "Dist_Id": "35",
+      "Dist_Name": "Aurangabad"
+    },
+    {
+      "AC_Id": "223",
+      "AC_Name": "Aurangabad",
+      "PC_Id": "37",
+      "PC_Name": "Aurangabad",
+      "Dist_Id": "35",
+      "Dist_Name": "Aurangabad"
+    },
+    {
+      "AC_Id": "224",
+      "AC_Name": "Rafiganj",
+      "PC_Id": "37",
+      "PC_Name": "Aurangabad",
+      "Dist_Id": "35",
+      "Dist_Name": "Aurangabad"
+    },
+    {
+      "AC_Id": "225",
+      "AC_Name": "Gurua",
+      "PC_Id": "37",
+      "PC_Name": "Aurangabad",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "226",
+      "AC_Name": "Sherghati",
+      "PC_Id": "38",
+      "PC_Name": "Gaya (SC)",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "227",
+      "AC_Name": "Imamganj (SC)",
+      "PC_Id": "37",
+      "PC_Name": "Aurangabad",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "228",
+      "AC_Name": "Barachatti (SC)",
+      "PC_Id": "38",
+      "PC_Name": "Gaya (SC)",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "229",
+      "AC_Name": "Bodh Gaya (SC)",
+      "PC_Id": "38",
+      "PC_Name": "Gaya (SC)",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "230",
+      "AC_Name": "Gaya Town",
+      "PC_Id": "38",
+      "PC_Name": "Gaya (SC)",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "231",
+      "AC_Name": "Tikari",
+      "PC_Id": "37",
+      "PC_Name": "Aurangabad",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "232",
+      "AC_Name": "Belaganj",
+      "PC_Id": "38",
+      "PC_Name": "Gaya (SC)",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "233",
+      "AC_Name": "Atri",
+      "PC_Id": "36",
+      "PC_Name": "Jahanabad",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "234",
+      "AC_Name": "Wazirganj",
+      "PC_Id": "38",
+      "PC_Name": "Gaya (SC)",
+      "Dist_Id": "36",
+      "Dist_Name": "Gaya"
+    },
+    {
+      "AC_Id": "235",
+      "AC_Name": "Rajauli (SC)",
+      "PC_Id": "39",
+      "PC_Name": "Nawada",
+      "Dist_Id": "37",
+      "Dist_Name": "Nawada"
+    },
+    {
+      "AC_Id": "236",
+      "AC_Name": "Hisua",
+      "PC_Id": "39",
+      "PC_Name": "Nawada",
+      "Dist_Id": "37",
+      "Dist_Name": "Nawada"
+    },
+    {
+      "AC_Id": "237",
+      "AC_Name": "Nawada",
+      "PC_Id": "39",
+      "PC_Name": "Nawada",
+      "Dist_Id": "37",
+      "Dist_Name": "Nawada"
+    },
+    {
+      "AC_Id": "238",
+      "AC_Name": "Gobindpur",
+      "PC_Id": "39",
+      "PC_Name": "Nawada",
+      "Dist_Id": "37",
+      "Dist_Name": "Nawada"
+    },
+    {
+      "AC_Id": "239",
+      "AC_Name": "Warisaliganj",
+      "PC_Id": "39",
+      "PC_Name": "Nawada",
+      "Dist_Id": "37",
+      "Dist_Name": "Nawada"
+    },
+    {
+      "AC_Id": "240",
+      "AC_Name": "Sikandra (SC)",
+      "PC_Id": "40",
+      "PC_Name": "Jamui (SC)",
+      "Dist_Id": "38",
+      "Dist_Name": "Jamui"
+    },
+    {
+      "AC_Id": "241",
+      "AC_Name": "Jamui",
+      "PC_Id": "40",
+      "PC_Name": "Jamui (SC)",
+      "Dist_Id": "38",
+      "Dist_Name": "Jamui"
+    },
+    {
+      "AC_Id": "242",
+      "AC_Name": "Jhajha",
+      "PC_Id": "40",
+      "PC_Name": "Jamui (SC)",
+      "Dist_Id": "38",
+      "Dist_Name": "Jamui"
+    },
+    {
+      "AC_Id": "243",
+      "AC_Name": "Chakai",
+      "PC_Id": "40",
+      "PC_Name": "Jamui (SC)",
+      "Dist_Id": "38",
+      "Dist_Name": "Jamui"
+    }
+  ]
+}
