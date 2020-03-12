@@ -8,4 +8,10 @@ public class Constants {
     public static final String EMAIL ="volunteer.plurals@gmail.com";
     public static final String PASSWORD ="plurals@#volunteer";
 
+
+  // REJEX
+    public static final String MOBILE_NUM_REGEX ="[0-9]{10}";
+    public static final String EMAIL_ID_REJEX ="^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+    public static final String PINCODE_REJEX ="^[1-9][0-9]{5}$";
+
 }
