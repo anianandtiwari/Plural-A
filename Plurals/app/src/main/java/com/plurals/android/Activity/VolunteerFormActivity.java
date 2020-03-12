@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -33,14 +34,22 @@ public class VolunteerFormActivity extends AppCompatActivity {
     TextView textView;
     ArrayList<String> parliamentList, assemblyList;
     View snackView;
+    ImageView back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_form);
         snackView = findViewById(R.id.register_activity);
+        back_button = findViewById(R.id.rv_back);
         findViews();
         fetchPCJson();
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
        // snackBar(snackView,"Welcome");
     }
 

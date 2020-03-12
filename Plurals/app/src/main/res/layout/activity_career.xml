@@ -38,7 +38,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/rv_back"
                 android:fontFamily="@font/montserrat_semibold"
-                android:text="Register with us"
+                android:text="Apply for Career"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -54,9 +54,9 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:paddingHorizontal="15dp"
                 android:background="@drawable/curved_form_rectangle"
-               android:backgroundTint="#F44336"
+                android:backgroundTint="#F44336"
                 android:paddingVertical="3dp"
-                android:text="I'M IN"
+                android:text="Submit"
                 android:textColor="#fff"
                 android:textSize="15sp" />
 
@@ -473,17 +473,25 @@
 
                 </LinearLayout>
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/montserrat_medium"
                     android:gravity="start"
-                    android:text="@string/pc_ac_details"
+                    android:text="Statement For Purpose"
                     android:textColor="#EDEDED"
-
                     android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="start"
+                    android:text="@string/purpose"
+                    android:textColor="#C1C0C0"
+                    android:textSize="11sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -491,59 +499,82 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/curved_form_rectangle"
                     android:orientation="vertical"
+                    android:layout_marginBottom="16dp"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="16dp">
+                    android:paddingVertical="16dp"
+                    android:visibility="visible">
 
-                    <LinearLayout
+                    <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/curved_edittext"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:paddingVertical="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="16dp"
+
                         >
 
-                        <Spinner
-                            android:id="@+id/sp_parliament"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/ti_purpose"
+                            style="@style/TextLabel"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="20dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.502"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.498"></Spinner>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_marginTop="14dp"
-                            android:layout_marginHorizontal="18dp"
-                            android:background="#9C9C9C"></View>
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="8dp"
+                            android:textColorHint="@color/inactive_tab_text">
+
+                            <EditText
+                                android:id="@+id/rv_purpose"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="#ECECEC"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:gravity="start"
+                                android:inputType="textCapSentences"
+
+                                android:minHeight="50dp"
+                                android:paddingLeft="19dp"
+                                android:paddingTop="2dp"
+                                android:paddingRight="16dp"
+                                android:textSize="12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
 
-                        <Spinner
-                            android:id="@+id/sp_assembly"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="20dp"
-                            android:layout_marginTop="14dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.502"
-
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.498"></Spinner>
-
-
-                    </LinearLayout>
+                    </FrameLayout>
 
 
                 </LinearLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:text="Upload Cv"
+                    android:textColor="#EDEDED"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/curved_form_rectangle"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:visibility="visible">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                         android:text="Choose pdf/docx"/>
 
 
+                </LinearLayout>
 
             </LinearLayout>
 
