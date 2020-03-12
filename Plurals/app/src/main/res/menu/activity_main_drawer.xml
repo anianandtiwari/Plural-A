@@ -8,26 +8,31 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/menu_home" />
-        <!--<item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_content_paste_black_24dp"
-            android:title="@string/menu_gallery" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_local_parking_black_24dp"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_fb"
+            android:icon="@drawable/ic_facebook_black"
+            android:title="@string/facebook" />
         <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_rate_review_black_24dp"
-            android:title="@string/menu_tools" />
+            android:id="@+id/nav_tw"
+            android:icon="@drawable/ic_twitter_black"
+            android:title="@string/twitter" />
         <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_menu_share"
-            android:title="@string/menu_share" />
+            android:id="@+id/nav_utube"
+            android:icon="@drawable/ic_youtube_black"
+            android:title="@string/youtube" />
         <item
-            android:id="@+id/nav_send"
-            android:icon="@drawable/ic_person_outline_black_24dp"
-            android:title="@string/menu_send" />-->
+            android:id="@+id/nav_volunteer"
+            android:icon="@drawable/ic_volunteer"
+            android:title="@string/volunteer" />
+        <item
+            android:id="@+id/nav_career"
+            android:icon="@drawable/ic_career"
+            android:title="@string/career" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/logout" />
     </group>
 
 

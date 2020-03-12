@@ -17,6 +17,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.plurals.android.Activity.VolunteerFormActivity;
 import com.plurals.android.R;
 import com.plurals.android.Utility.CommonUtils;
 import com.plurals.android.Utility.Constants;
@@ -24,9 +25,6 @@ import com.plurals.android.Utility.Constants;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private HomeViewModel homeViewModel;
-    TextView fb_text,twitter_text,utube_text;
-    ImageView fb_icon,twi_icon,utube_icon;
-    CardView fb_card,twi_card,utube_card;
     Context context;
 
 
@@ -39,7 +37,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return root;
     }
 
-    CardView cv_youtube, cv_fb, cv_twitter, cv_about;
+    CardView cv_youtube, cv_fb, cv_twitter, cv_about , cv_volunteer;
 
 
     @Override
@@ -49,7 +47,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         cv_fb = view.findViewById(R.id.cv_fb);
         cv_twitter = view.findViewById(R.id.cv_twitter);
         cv_about = view.findViewById(R.id.cv_about);
-
+        cv_volunteer =view.findViewById(R.id.cv_volunteer);
+        cv_volunteer.setOnClickListener(this);
         cv_about.setOnClickListener(this);
         cv_twitter.setOnClickListener(this);
         cv_fb.setOnClickListener(this);
@@ -88,6 +87,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(ut);
                 break;
 
+            case R.id.cv_volunteer:
+                Intent vol_intent = new Intent(getActivity(), VolunteerFormActivity.class);
+                startActivity(vol_intent);
+                break;
+
 
         }
     }
@@ -111,7 +115,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public static Intent getOpenTwitterIntent(Context context) {
         Log.d("click","twitter click ");
-        String id = "https://twitter.com/pushpampc13";
+        String id = Constants.TWITTER_URL;
         Intent intent = null;
         try {
             // Get Twitter app
@@ -128,7 +132,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     public static Intent getOpenYoutubeIntent(Context context) {
         Log.d("click","Youtube click ");
-        String id = "https://www.youtube.com/channel/UCDI8o1h8Zq_JKRPaPdmHdLQ";
+        String id = Constants.YOUTUBE_URL;
         Intent intent = null;
         try {
             // Get Twitter app

@@ -8,12 +8,18 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Dashboard</string>
-    <string name="menu_gallery">News</string>
-    <string name="menu_slideshow">Politics</string>
-    <string name="menu_tools">Rate</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">About Us</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="youtube">Youtube</string>
+    <string name="volunteer">Party Ambassador</string>
+    <string name="career">Career</string>
+    <string name="logout">Logout</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="address_line_1">Address line 1</string>
+    <string name="address_line_2">Address line 2 (Optional)</string>
 
     <string name="facebook_app_id">139060064069322</string>
     <string name="fb_login_protocol_scheme">fb139060064069322</string>
+    <string name="purpose">(Please write in max. 100 words that what is your motivation for joining)</string>
+    <string name="pc_ac_details"><![CDATA[Parliament & Assembly Details]]></string>
 </resources>

@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.plurals.android.R;
+import com.plurals.android.Utility.SharedPref;
 
 public class SplashActivity extends AppCompatActivity {
 
     private Handler mHandler = new Handler();
+    SharedPref sharedPref = SharedPref.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,9 +21,17 @@ public class SplashActivity extends AppCompatActivity {
     }
     private Runnable mUpdateTimeTask = new Runnable() {
         public void run() {
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(intent);
-            finish();
+            if (sharedPref.isLogin(SplashActivity.this)) {
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else
+            {
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
     };
 }

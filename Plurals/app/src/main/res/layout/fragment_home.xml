@@ -7,7 +7,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#414141">
+        android:overScrollMode="never"
+        android:background="@color/theme_bg_color">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,26 +57,12 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:paddingVertical="4dp"
-                android:text="Connect with us"
-                android:fontFamily="@font/montserrat_light"
-                android:textColor="#E1E1E1"
-                android:textSize="18sp"
-                android:textStyle="normal"/>
-
-
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-30dp"
                 android:id="@+id/cv_fb"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="35dp"
                 android:layout_marginRight="50dp"
                 app:cardBackgroundColor="#45619d"
                 app:cardCornerRadius="30dp">
@@ -136,7 +123,7 @@
                     <ImageView
                         android:id="@+id/twitter_icon"
                         android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_height="43dp"
                         android:layout_marginStart="20dp"
                         android:layout_alignParentRight="true"
                         android:src="@drawable/ic_twitter"/>
@@ -199,6 +186,51 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginStart="16dp"
                         android:src="@drawable/ic_youtube_white"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-30dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/cv_volunteer"
+                app:cardBackgroundColor="#EEF57F17"
+                app:cardCornerRadius="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_gravity="start"
+                    android:paddingEnd="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="43dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_volunteer"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="25dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Party Ambassador"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

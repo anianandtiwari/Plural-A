@@ -31,19 +31,28 @@ public class SharedPref
     }
 
 
-    public void saveToken(Context context , String token , String user_email , String user_nicename , String user_display_name , boolean bool ) {
+    public void saveCredentials(Context context , String user_email , String user_display_name ,String image, boolean bool ) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("token", token);
         editor.putString("user_email", user_email);
-        editor.putString("user_nicename", user_nicename);
+        editor.putString("image", image);
         editor.putString("user_display_name", user_display_name);
         editor.putBoolean("isLogin", bool);
         editor.apply();
     }
-    public String getAuthToken(Context context) {
+
+    public void saveMob(Context context , String mob ) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString("token", "");
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("mob", mob);
+        editor.apply();
+    }
+
+
+
+    public String getMob(Context context) {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPreferences.getString("mob", "");
     }
     public String getUser_email(Context context) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -51,11 +60,11 @@ public class SharedPref
     }
     public String getUser_image(Context context) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString("user_display_name", "");
+        return sharedPreferences.getString("image", "");
     }
     public String getUser_username(Context context) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPreferences.getString("user_nicename", "");
+        return sharedPreferences.getString("user_display_name", "");
     }
 
     public boolean isLogin(Context context)
@@ -67,9 +76,9 @@ public class SharedPref
     public void removeToken(Context context) {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.remove("token");
+        editor.remove("mob");
         editor.remove("user_email");
-        editor.remove("user_nicename");
+        editor.remove("image");
         editor.remove("user_display_name");
         editor.putBoolean("isLogin", false);
         editor.apply();

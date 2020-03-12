@@ -58,11 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText dialogedit;
     private ProgressDialog getotp_Pd;
     SharedPref sharedPref = SharedPref.getInstance();
-    LoginButton loginButton;
-    CallbackManager callbackManager;
-    private Handler handler;
-    String fb_name, fb_email, fb_image;
-    ImageButton fb_login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         mobile = findViewById(R.id.mobile);
         getotp = findViewById(R.id.getotp);
-        fb_login = findViewById(R.id.fb_login);
+
         getotp_Pd = new ProgressDialog(LoginActivity.this);
         getotp_Pd.setMessage("Please Wait...");
         getotp_Pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -83,105 +79,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                String sign = Base64.encodeToString(md.digest(), Base64.DEFAULT);
-                Log.d("key:", sign);
-                //textInstructionsOrLink = (TextView)findViewById(R.id.textstring);
-                //textInstructionsOrLink.setText(sign);
-                //Toast.makeText(getApplicationContext(), sign, Toast.LENGTH_LONG).show();
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.d("nope", "nope");
-        } catch (NoSuchAlgorithmException e) {
-        }
-
-        fb_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loginButton.performClick();
-            }
-        });
-      /*  FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);*/
-        loginButton = findViewById(R.id.login_button);
-        callbackManager = CallbackManager.Factory.create();
-        loginButton.setReadPermissions(Arrays.asList("email", "public_profile"));
-        //checkLoginStatus();
-        //   loginButton.setPermissions(Arrays.asList("email","public_profile"));
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                AccessToken accessToken = loginResult.getAccessToken();
-                Log.d("Facebook accessToken", accessToken.getToken());
-                user_detail(accessToken);
-
-            }
-
-            @Override
-            public void onCancel() {
-                Log.d("Facebok oncancel", "cancelled");
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Log.d("Facebookerror", error.toString());
-            }
-        });
-
     }
 
-    public void user_detail(AccessToken accessToken) {
-        Log.d("Fb_userdetails", "" + accessToken.getToken());
-        GraphRequest request = GraphRequest.newMeRequest(accessToken, new GraphRequest.GraphJSONObjectCallback() {
-            //OnCompleted is invoked once the GraphRequest is successful
-            @Override
-            public void onCompleted(JSONObject object, GraphResponse response) {
-                try {
-                    fb_name = object.getString("name");
-                    Log.d("fbname", fb_name);
-                    fb_image = object.getJSONObject("picture").getJSONObject("data").getString("url");
-                    Log.d("fbimage", fb_image);
-                    String id = object.getString("id");
-                    Log.d("fb_id", id);
-                    Log.d("jspn_fb", object.toString());
-                    try {
-                        fb_email = object.getString("email");
-                        Log.d("fbmail", fb_email);
-                        LoginManager.getInstance().logOut();
-                        //showDialog();
-                        sharedPref.saveToken(LoginActivity.this, id, fb_email, fb_name, fb_image, true);
-                        toast_msg("Welcome " + fb_name);
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    } catch (Exception e) {
-                        LoginManager.getInstance().logOut();
 
-                    }
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        Bundle parameters = new Bundle();
-        parameters.putString("fields", "id,name,email,picture.width(200)");
-        request.setParameters(parameters);
-        request.executeAsync();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-        Log.d("on Activityresult", "" + requestCode + "::" + resultCode);
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
     public void showDialog(String description) {
         final Dialog dialog = new Dialog(this);
@@ -291,11 +191,11 @@ public class LoginActivity extends AppCompatActivity {
                                     OtpLogin otpLogin = new Gson().fromJson(response.toString(), OtpLogin.class);
                                     Log.d("otpActivity", otpLogin.getData().toString());
                                     //toast_msg(otpLogin.getData().getUser_display_name());
-                                    sharedPref.saveToken(LoginActivity.this, otpLogin.getData().getToken(), otpLogin.getData().getUser_email(), otpLogin.getData().getUser_nicename(), otpLogin.getData().getUser_display_name(), true);
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    sharedPref.saveMob(LoginActivity.this, otpLogin.getData().getUser_display_name());
+                                    Intent intent = new Intent(LoginActivity.this, OtpActivity.class);
                                     startActivity(intent);
                                     finish();
-                                    finishAffinity();
+                                    //finishAffinity();
                                 } else {
                                     Log.d("otpActivity-else", "" + success);
                                     toast_msg("Wrong Otp");
