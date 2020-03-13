@@ -127,7 +127,6 @@ public class VolunteerFormActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
         sp_assembly.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
