@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,16 +44,25 @@ public class VolunteerFormActivity extends AppCompatActivity {
     TextView textView;
     ArrayList<String> parliamentList, assemblyList, districtList;
     View snackView;
+    ImageView back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_form);
         snackView = findViewById(R.id.register_activity);
+        back_button = findViewById(R.id.rv_back);
         findViews();
         fetchPCJson();
         fetchStateDistrictJson();
         // snackBar(snackView,"Welcome");
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+       // snackBar(snackView,"Welcome");
     }
 
     Spinner sp_parliament, sp_assembly, sp_state, sp_district;

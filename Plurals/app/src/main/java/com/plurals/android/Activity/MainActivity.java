@@ -1,7 +1,10 @@
 package com.plurals.android.Activity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -31,6 +34,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         user_email = headerView.findViewById(R.id.user_email);
         user_name = headerView.findViewById(R.id.user_name);
         user_image = headerView.findViewById(R.id.user_image);
+        showDialog();
         try {
             user_name.setText(sharedPref.getUser_username(this));
             String imageUrl = sharedPref.getUser_image(this);
@@ -132,7 +138,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(vol_intent);
                 break;
             case R.id.nav_career:
-               // toast_msg("career");
+                Intent car_intent = new Intent(MainActivity.this,CareerActivity.class);
+                startActivity(car_intent);
                 break;
             case R.id.nav_logout:
                 sharedPref.removeToken(this);
@@ -155,6 +162,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toast toast = Toast.makeText(this.getApplicationContext(), msg, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
+    }
+
+    public void showDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.register_popup);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Button dialogApply = dialog.findViewById(R.id.apply_button);
+        /*Button dialogCancel = dialog.findViewById(R.id.cancel);
+        dialogCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });*/
+        dialogApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                Intent volIntent = new Intent(MainActivity.this,VolunteerFormActivity.class);
+                startActivity(volIntent);
+            }
+        });
+
+        dialog.show();
     }
 
 
