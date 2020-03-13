@@ -28,6 +28,7 @@ import com.plurals.android.Utility.CommonUtils;
 import com.plurals.android.Utility.Constants;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -89,6 +90,15 @@ public class VolunteerFormActivity extends AppCompatActivity {
             public void onClick(View v) {
                 CommonUtils.hideForcefullyKeyboard(VolunteerFormActivity.this);
                 CommonUtils.showToastInDebug(VolunteerFormActivity.this, "saved");
+               JSONObject dataJson= collectDate();
+
+               //TODO create your msg string below like -
+                try {
+                    String msg=dataJson.getString("name")+"/ "+dataJson.getString("email");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
 
@@ -96,7 +106,28 @@ public class VolunteerFormActivity extends AppCompatActivity {
         setTextWatchers();
     }
 
-    String selectedState, selectedDistrict;
+    private JSONObject collectDate() {
+        JSONObject data= new JSONObject();
+        try {
+            data.put("first_name",rv_name.getText().toString());
+            data.put("last_name",rv_name_last.getText().toString());
+            data.put("email",rv_email.getText().toString());
+            data.put("mobile",rv_mob.getText().toString());
+            data.put("mobile",rv_mob.getText().toString());
+            data.put("address",rv_address_1.getText().toString());
+            data.put("pincode",rv_pincode.getText().toString());
+            data.put("state",selectedState);
+            data.put("district",selectedDistrict);
+            data.put("parliament",selectedParliament);
+            data.put("assembly",selectedAssembly);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return data;
+    }
+
+    String selectedState, selectedDistrict,selectedParliament,selectedAssembly;
 
     private void setSpinnerListeners() {
         sp_parliament.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -104,6 +135,7 @@ public class VolunteerFormActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position > 0) {
                     isValideParliament = true;
+                    selectedParliament=parliamentList.get(position);
                     assemblyList = new ArrayList();
                     assemblyList.add("Select An Assembly");
                     Collections.sort(pcMap.get(parliamentList.get(position)), String.CASE_INSENSITIVE_ORDER);
@@ -114,6 +146,7 @@ public class VolunteerFormActivity extends AppCompatActivity {
                     sp_assembly.setAdapter(assemblyAdapter);
 
                 } else {
+                    selectedParliament="";
                     isValideParliament = false;
                     assemblyList = new ArrayList();
                     assemblyList.add("Select An Assembly");
@@ -133,8 +166,10 @@ public class VolunteerFormActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position > 0) {
+                    selectedAssembly=assemblyList.get(position);
                     isValideAssembly = true;
                 } else {
+                    selectedAssembly="";
                     isValideAssembly = false;
                 }
                 checkValidation();
