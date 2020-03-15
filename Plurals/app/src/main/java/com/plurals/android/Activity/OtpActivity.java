@@ -3,11 +3,14 @@ package com.plurals.android.Activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.facebook.AccessToken;
@@ -21,6 +24,7 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.plurals.android.R;
+import com.plurals.android.Utility.CommonUtils;
 import com.plurals.android.Utility.SendMail;
 import com.plurals.android.Utility.SharedPref;
 
@@ -38,6 +42,9 @@ public class OtpActivity extends AppCompatActivity {
     String fb_name, fb_email, fb_image;
     ImageButton fb_login;
     View view;
+    Button otp_submit;
+    EditText otp_name,otp_email,otp_mob;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +53,48 @@ public class OtpActivity extends AppCompatActivity {
         view = findViewById(R.id.otp_layout);
         fb_login = findViewById(R.id.fb_login);
         loginButton = findViewById(R.id.login_button);
-
-
+        otp_email = findViewById(R.id.otp_email);
+        otp_mob = findViewById(R.id.otp_mob);
+        otp_name = findViewById(R.id.otp_name);
+        otp_submit = findViewById(R.id.otp_submit);
+        otp_mob.setText(sharedPref.getMob(OtpActivity.this));
+        otp_mob.setEnabled(false);
+        progressDialog = new ProgressDialog(OtpActivity.this);
+        progressDialog.setMessage("Submitting...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setCancelable(false);
 
         fb_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 loginButton.performClick();
+            }
+        });
+
+        otp_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = otp_name.getText().toString().trim();
+                String email = otp_email.getText().toString().trim();
+                String mob = otp_mob.getText().toString().trim();
+                String type = "1";
+                if (name.isEmpty() || mob.isEmpty())
+                {
+                    snackBar(view,"Fields can't be empty");
+                }
+                else {
+                    String msg = "Name = "+name+"\nEmail = "+email+"\nMobile = "+mob+"\nLogin type = "+type;
+                    SendMail sendMail = new SendMail(OtpActivity.this,"Login Response",msg){
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            Log.d("mail","on post execute");
+                            progressDialog.dismiss();
+                            onBackPressed();
+                            super.onPostExecute(aVoid);
+                        }
+                    };
+                    sendMail.execute();
+                }
             }
         });
 
@@ -66,7 +108,6 @@ public class OtpActivity extends AppCompatActivity {
                 AccessToken accessToken = loginResult.getAccessToken();
                 Log.d("Facebook accessToken", accessToken.getToken());
                 user_detail(accessToken);
-
             }
 
             @Override
@@ -79,7 +120,6 @@ public class OtpActivity extends AppCompatActivity {
                 Log.d("Facebookerror", error.toString());
             }
         });
-
 
     }
 
@@ -106,7 +146,7 @@ public class OtpActivity extends AppCompatActivity {
                         String message = "User Name - "+fb_name +"\n"+
                                 "Email - "+fb_email +"\n"+
                                 "mobile no. - "+sharedPref.getMob(OtpActivity.this) +"\n"+
-                                "Image Link - "+fb_image +"\n";
+                                "Image Link - "+fb_image +"\nMobile no = "+sharedPref.getMob(OtpActivity.this);
                         SendMail sendMail = new SendMail(OtpActivity.this,"Logged in Response",message);
                         sendMail.execute();
                         dashboard();

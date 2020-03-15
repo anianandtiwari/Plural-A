@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText dialogedit;
     private ProgressDialog getotp_Pd;
     SharedPref sharedPref = SharedPref.getInstance();
+    Dialog dialog;
 
 
     @Override
@@ -84,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void showDialog(String description) {
-        final Dialog dialog = new Dialog(this);
+        dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(false);
         dialog.setContentView(R.layout.mobile_otp);
@@ -171,7 +172,7 @@ public class LoginActivity extends AppCompatActivity {
         if (otp.length() < 4) {
             toast_msg("Entered otp is wrong");
         } else {
-
+             dialog.dismiss();
             getotp_Pd.show();
             final JSONObject object_mob = new JSONObject();
             try {

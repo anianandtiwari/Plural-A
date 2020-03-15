@@ -24,10 +24,182 @@
                 android:layout_height="180dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="-15dp"
-                android:layout_marginTop="50dp"
+
                 android:scaleType="fitXY"
                 android:src="@drawable/plu_white" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="Enter personal Details"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/curved_bg"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/curved_edittext"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_name"
+                        style="@style/TextLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:textColorHint="@color/inactive_tab_text">
+
+                        <EditText
+                            android:id="@+id/otp_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="#ECECEC"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:hint="*Name"
+                            android:inputType="textCapWords"
+                            android:maxLines="1"
+                            android:paddingLeft="19dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="16dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/curved_edittext"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_email"
+                        style="@style/TextLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:textColorHint="@color/inactive_tab_text">
+
+                        <EditText
+
+                            android:id="@+id/otp_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="#ECECEC"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:hint="Email address"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingLeft="19dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="16dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/curved_edittext"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="16dp"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti_mob"
+                        style="@style/TextLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="8dp"
+                        android:textColorHint="@color/inactive_tab_text">
+
+                        <EditText
+                            android:id="@+id/otp_mob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="#ECECEC"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="start"
+                            android:hint="*Phone Number"
+                            android:importantForAutofill="no"
+                            android:inputType="phone|textNoSuggestions"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:textColor="@color/colorAccent"
+                            android:paddingLeft="19dp"
+                            android:paddingTop="2dp"
+                            android:enabled="false"
+                            android:paddingRight="16dp"
+                            android:singleLine="true"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </FrameLayout>
+
+
+                   <Button
+                       android:id="@+id/otp_submit"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Submit"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_marginTop="15dp"
+                       android:backgroundTint="@color/red"
+                       android:textColor="#fff"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="or"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/montserrat_light"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="Fetch details through"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/montserrat_light"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
