@@ -74,6 +74,7 @@ public class OtpActivity extends AppCompatActivity {
         otp_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 final String name = otp_name.getText().toString().trim();
                 final String email = otp_email.getText().toString().trim();
                 String mob = otp_mob.getText().toString().trim();
