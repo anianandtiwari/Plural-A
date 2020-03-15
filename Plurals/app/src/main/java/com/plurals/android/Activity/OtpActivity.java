@@ -74,8 +74,8 @@ public class OtpActivity extends AppCompatActivity {
         otp_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = otp_name.getText().toString().trim();
-                String email = otp_email.getText().toString().trim();
+                final String name = otp_name.getText().toString().trim();
+                final String email = otp_email.getText().toString().trim();
                 String mob = otp_mob.getText().toString().trim();
                 String type = "1";
                 if (name.isEmpty() || mob.isEmpty())
@@ -83,13 +83,16 @@ public class OtpActivity extends AppCompatActivity {
                     snackBar(view,"Fields can't be empty");
                 }
                 else {
+                    progressDialog.show();
                     String msg = "Name = "+name+"\nEmail = "+email+"\nMobile = "+mob+"\nLogin type = "+type;
                     SendMail sendMail = new SendMail(OtpActivity.this,"Login Response",msg){
                         @Override
                         protected void onPostExecute(Void aVoid) {
                             Log.d("mail","on post execute");
                             progressDialog.dismiss();
-                            onBackPressed();
+                            sharedPref.saveCredentials(OtpActivity.this, email, name, "", true);
+                            Intent intent = new Intent(OtpActivity.this,MainActivity.class);
+                            startActivity(intent);
                             super.onPostExecute(aVoid);
                         }
                     };

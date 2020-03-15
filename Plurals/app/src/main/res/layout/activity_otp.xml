@@ -72,7 +72,7 @@
                             android:background="#ECECEC"
                             android:fontFamily="@font/montserrat_medium"
                             android:gravity="start"
-                            android:hint="*Name"
+                            android:hint="*Full Name"
                             android:inputType="textCapWords"
                             android:maxLines="1"
                             android:paddingLeft="19dp"

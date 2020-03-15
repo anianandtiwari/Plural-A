@@ -55,6 +55,97 @@
 
                 </FrameLayout>
 
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginTop="35dp"
+                android:id="@+id/cv_membership"
+                android:layout_marginRight="50dp"
+                app:cardBackgroundColor="#739C43"
+                app:cardCornerRadius="30dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="30dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:id="@+id/membership_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Party Membership"
+                        android:gravity="start"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/membership_icon"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_marketing"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-30dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="26dp"
+                android:id="@+id/cv_volunteer"
+                app:cardBackgroundColor="#EEE0842F"
+                app:cardCornerRadius="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_gravity="start"
+                    android:paddingEnd="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="43dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_volunteer"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="25dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Party Ambassador"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -152,7 +243,7 @@
                 android:layout_marginLeft="-30dp"
                 android:layout_marginTop="26dp"
                 android:id="@+id/cv_youtube"
-
+                android:layout_marginBottom="20dp"
                 android:layout_marginRight="50dp"
                 app:cardBackgroundColor="#D22215"
                 app:cardCornerRadius="30dp">
@@ -190,50 +281,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="-30dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="26dp"
-                android:layout_marginBottom="20dp"
-                android:id="@+id/cv_volunteer"
-                app:cardBackgroundColor="#EEF57F17"
-                app:cardCornerRadius="30dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_gravity="start"
-                    android:paddingEnd="10dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingVertical="8dp">
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="43dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/ic_volunteer"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="25dp"
-                        android:fontFamily="@font/montserrat_regular"
-                        android:text="Party Ambassador"
-                        android:textColor="#fff"
-                        android:textSize="15sp"
-                        android:textStyle="bold">
-
-                    </TextView>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </ScrollView>

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
+import com.facebook.login.Login;
 import com.plurals.android.R;
 import com.plurals.android.Utility.SharedPref;
 
@@ -27,8 +29,13 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-            else
+            else if (!sharedPref.getMob(SplashActivity.this).isEmpty())
             {
+                Intent intent = new Intent(SplashActivity.this, OtpActivity.class);
+                startActivity(intent);
+                finish();
+            }
+            else {
                 Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();

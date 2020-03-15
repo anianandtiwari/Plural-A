@@ -43,6 +43,7 @@ import com.plurals.android.Utility.CommonUtils;
 import com.plurals.android.Utility.Constants;
 import com.plurals.android.Utility.FileUtils;
 import com.plurals.android.Utility.SendMail;
+import com.plurals.android.Utility.SharedPref;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -88,6 +89,7 @@ public class VolunteerFormActivity extends AppCompatActivity {
     static int PICK_FROM_GALLERY = 0;
     int columnIndex;
     static Uri URI = null;
+    SharedPref sharedPref = SharedPref.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,15 +118,32 @@ public class VolunteerFormActivity extends AppCompatActivity {
 
 
     private void findViews() {
+        String fullName = sharedPref.getUser_username(VolunteerFormActivity.this);
+        String firstName,lastName;
+        int idx = fullName.lastIndexOf(' ');
+        Log.d("idx",""+idx);
+        if (idx == -1) {
+            firstName=fullName;
+            lastName="";
+        }
+        else { firstName = fullName.substring(0, idx);
+            lastName = fullName.substring(idx + 1);}
         sp_district = findViewById(R.id.sp_district);
         sp_state = findViewById(R.id.sp_state);
         rv_save = findViewById(R.id.rv_save);
         rv_pincode = findViewById(R.id.rv_pincode);
         rv_address_1 = findViewById(R.id.rv_address_1);
         rv_name = findViewById(R.id.rv_name);
+        rv_name.setText(firstName);
+        isValidName=true;
         rv_name_last = findViewById(R.id.rv_name_last);
+        rv_name_last.setText(lastName);
         rv_mob = findViewById(R.id.rv_mob);
+        rv_mob.setText(sharedPref.getMob(VolunteerFormActivity.this));
+        isValidNum=true;
         rv_email = findViewById(R.id.rv_email);
+        rv_email.setText(sharedPref.getUser_email(VolunteerFormActivity.this));
+        isValidEmail=true;
         sp_assembly = findViewById(R.id.sp_assembly);
         sp_parliament = findViewById(R.id.sp_parliament);
         rv_save.setEnabled(false);

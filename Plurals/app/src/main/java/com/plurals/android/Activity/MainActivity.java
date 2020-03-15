@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dialog.setContentView(R.layout.register_popup);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Button dialogApply = dialog.findViewById(R.id.apply_button);
+        dialogApply.setText("Apply");
         /*Button dialogCancel = dialog.findViewById(R.id.cancel);
         dialogCancel.setOnClickListener(new View.OnClickListener() {
             @Override

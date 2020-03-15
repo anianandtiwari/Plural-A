@@ -38,7 +38,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/rv_back"
                 android:fontFamily="@font/montserrat_semibold"
-                android:text="Apply for Career"
+                android:text="Be a Plural"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -437,6 +437,45 @@
 
                 </LinearLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="start"
+                    android:text="Statement for Purpose"
+                    android:textColor="#EDEDED"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="start"
+                    android:text="@string/upload"
+                    android:textColor="#C1C0C0"
+                    android:textSize="11sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/curved_form_rectangle"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="3dp"
+                    android:paddingVertical="3dp"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/rv_uploadsop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                        android:text="Choose pdf/docx"/>
+
+
+                </LinearLayout>
 
 
                 <TextView
@@ -461,7 +500,7 @@
                     android:visibility="visible">
 
                     <Button
-                        android:id="@+id/rv_upload"
+                        android:id="@+id/rv_uploadcv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAllCaps="false"

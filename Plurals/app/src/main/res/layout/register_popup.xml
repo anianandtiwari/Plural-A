@@ -20,6 +20,7 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/popup_head"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/register"
@@ -33,6 +34,7 @@
         </FrameLayout>
 
         <TextView
+            android:id="@+id/popup_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -60,7 +62,6 @@
                 android:layout_gravity="center"
                 android:background="@android:color/black"
                 android:backgroundTint="#CE0A0A"
-                android:text="Apply"
                 android:textAllCaps="false"
                 android:textColor="#FFF"
                 android:textSize="15dp" />

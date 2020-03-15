@@ -3,9 +3,12 @@ package com.plurals.android.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -13,6 +16,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -37,6 +41,7 @@ import com.plurals.android.Utility.CommonUtils;
 import com.plurals.android.Utility.Constants;
 import com.plurals.android.Utility.FileUtils;
 import com.plurals.android.Utility.SendMail;
+import com.plurals.android.Utility.SharedPref;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,7 +64,7 @@ public class CareerActivity extends AppCompatActivity {
     ArrayAdapter parliamentAdapter, assemblyAdapter, stateAdapter, districtAdapter;
     EditText rv_name, rv_name_last, rv_mob, rv_email, rv_address_1, rv_pincode;
     TextView rv_save;
-Button rv_upload;
+    Button rv_uploadcv,rv_uploadsop;
     String selectedState, selectedDistrict,attachment;
     StateDistrictModel stateDistrictModel;
     ArrayList<String> stateList;
@@ -77,6 +82,7 @@ Button rv_upload;
     static int PICK_FROM_GALLERY = 0;
     int columnIndex;
     static Uri URI = null;
+    SharedPref sharedPref = SharedPref.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,25 +97,44 @@ Button rv_upload;
                 onBackPressed();
             }
         });
-
+        showDialog();
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Submitting...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.setCancelable(false);
+
+
     }
 
 
     private void findViews() {
+        String fullName = sharedPref.getUser_username(CareerActivity.this);
+        String firstName,lastName;
+        int idx = fullName.lastIndexOf(' ');
+            Log.d("idx",""+idx);
+            if (idx == -1) {
+                firstName=fullName;
+                lastName="";
+            }
+            else { firstName = fullName.substring(0, idx);
+                lastName = fullName.substring(idx + 1);}
+
         sp_district = findViewById(R.id.sp_district);
         sp_state = findViewById(R.id.sp_state);
         rv_save = findViewById(R.id.rv_save);
         rv_pincode = findViewById(R.id.rv_pincode);
         rv_address_1 = findViewById(R.id.rv_address_1);
         rv_name = findViewById(R.id.rv_name);
+        rv_name.setText(firstName);
+        isValidName=true;
         rv_name_last = findViewById(R.id.rv_name_last);
+        rv_name_last.setText(lastName);
         rv_mob = findViewById(R.id.rv_mob);
+        rv_mob.setText(sharedPref.getMob(CareerActivity.this));
+        isValidNum=true;
         rv_email = findViewById(R.id.rv_email);
-
+        rv_email.setText(sharedPref.getUser_email(CareerActivity.this));
+        isValidEmail=true;
         rv_save.setEnabled(false);
         rv_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,14 +177,22 @@ Button rv_upload;
         setSpinnerListeners();
         setTextWatchers();
 
-        rv_upload = findViewById(R.id.rv_upload);
-        rv_upload.setOnClickListener(new View.OnClickListener() {
+        rv_uploadcv = findViewById(R.id.rv_uploadcv);
+        rv_uploadcv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 requestMultiplePermissions();
 
             }
         });
+        rv_uploadsop= findViewById(R.id.rv_uploadsop);
+        rv_uploadsop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestMultiplePermissions();
+            }
+        });
+
     }
 
     public void openFile() {
@@ -487,5 +520,36 @@ Button rv_upload;
                 })
                 .onSameThread()
                 .check();
+    }
+
+
+    public void showDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(true);
+        dialog.setContentView(R.layout.register_popup);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView head = dialog.findViewById(R.id.popup_head);
+        head.setText("Party Membership");
+        TextView title = dialog.findViewById(R.id.popup_title);
+        title.setText("Please tell us in 100 words why you want to join Plurals");
+        Button dialogApply = dialog.findViewById(R.id.apply_button);
+        dialogApply.setText("Ok");
+        /*Button dialogCancel = dialog.findViewById(R.id.cancel);
+        dialogCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });*/
+        dialogApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+
+            }
+        });
+
+        dialog.show();
     }
 }
