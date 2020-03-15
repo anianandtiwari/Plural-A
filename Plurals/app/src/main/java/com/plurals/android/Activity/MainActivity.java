@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                Intent volIntent = new Intent(MainActivity.this,VolunteerFormActivity.class);
+                Intent volIntent = new Intent(MainActivity.this,CareerActivity.class);
                 startActivity(volIntent);
             }
         });

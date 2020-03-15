@@ -41,6 +41,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation 'com.karumi:dexter:5.0.0'
 
 
 }

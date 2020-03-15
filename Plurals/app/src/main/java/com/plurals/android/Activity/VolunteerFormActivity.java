@@ -4,15 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.res.AssetManager;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -22,10 +30,19 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.DexterError;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.PermissionRequestErrorListener;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.plurals.android.Model.StateDistrictModel;
 import com.plurals.android.R;
 import com.plurals.android.Utility.CommonUtils;
 import com.plurals.android.Utility.Constants;
+import com.plurals.android.Utility.FileUtils;
+import com.plurals.android.Utility.SendMail;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +54,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
@@ -46,6 +64,30 @@ public class VolunteerFormActivity extends AppCompatActivity {
     ArrayList<String> parliamentList, assemblyList, districtList;
     View snackView;
     ImageView back_button;
+    Spinner sp_parliament, sp_assembly, sp_state, sp_district;
+    ArrayAdapter parliamentAdapter, assemblyAdapter, stateAdapter, districtAdapter;
+    EditText rv_name, rv_name_last, rv_mob, rv_email, rv_address_1, rv_pincode;
+    TextView rv_save;
+    Button rv_upload;
+    String selectedState, selectedDistrict,selectedParliament,selectedAssembly,attachment;
+    StateDistrictModel stateDistrictModel;
+    ArrayList<String> stateList;
+    Map<String, ArrayList<String>> pcMap = new TreeMap();
+
+    private Boolean isValidName = false;
+    private Boolean isValidNum = false;
+    private Boolean isValidAddress1 = false;
+    private Boolean isValidPincode = false;
+    private Boolean isValidEmail = false;
+    private Boolean isvalidState = false;
+    private Boolean isValideDistrict = false;
+    private Boolean isValideParliament = false;
+    private Boolean isValideAssembly = false;
+    private Boolean isAttached = false;
+    private ProgressDialog progressDialog;
+    static int PICK_FROM_GALLERY = 0;
+    int columnIndex;
+    static Uri URI = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +95,11 @@ public class VolunteerFormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_volunteer_form);
         snackView = findViewById(R.id.register_activity);
         back_button = findViewById(R.id.rv_back);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Submitting...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setCancelable(false);
+
         findViews();
         fetchPCJson();
         fetchStateDistrictJson();
@@ -66,10 +113,6 @@ public class VolunteerFormActivity extends AppCompatActivity {
        // snackBar(snackView,"Welcome");
     }
 
-    Spinner sp_parliament, sp_assembly, sp_state, sp_district;
-    ArrayAdapter parliamentAdapter, assemblyAdapter, stateAdapter, districtAdapter;
-    EditText rv_name, rv_name_last, rv_mob, rv_email, rv_address_1, rv_pincode;
-    TextView rv_save;
 
 
     private void findViews() {
@@ -85,17 +128,42 @@ public class VolunteerFormActivity extends AppCompatActivity {
         sp_assembly = findViewById(R.id.sp_assembly);
         sp_parliament = findViewById(R.id.sp_parliament);
         rv_save.setEnabled(false);
+
         rv_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CommonUtils.hideForcefullyKeyboard(VolunteerFormActivity.this);
-                CommonUtils.showToastInDebug(VolunteerFormActivity.this, "saved");
-               JSONObject dataJson= collectDate();
+               // CommonUtils.showToastInDebug(VolunteerFormActivity.this, "saved");
+               JSONObject dataJson= collectData();
 
                //TODO create your msg string below like -
                 try {
-                    String msg=dataJson.getString("name")+"/ "+dataJson.getString("email");
+                    progressDialog.show();
+                    String msg=
+                            "First Name = "+dataJson.getString("first_name")+
+                               "\nLast Name =" +dataJson.getString("last_name")+
+                                    "\nEmail =" +dataJson.getString("email")+
+                                    "\nMobile =" +dataJson.getString("mobile")+
+                                    "\nAdress =" +dataJson.getString("address")+
+                                    "\nPincode =" +dataJson.getString("pincode")+
+                                    "\nState =" +dataJson.getString("state")+
+                                    "\nDistrict =" +dataJson.getString("district")+
+                                    "\nParliament =" +dataJson.getString("parliament")+
+                                    "\nAssembly =" +dataJson.getString("assembly");
+                    SendMail sendMail = new SendMail(VolunteerFormActivity.this,"Volunteer Registered",msg,attachment){
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            Log.d("mail","on post execute");
+                           CommonUtils.toast_msg("Your Application submitted \n"+"Thanks",VolunteerFormActivity.this);
+                            progressDialog.dismiss();
+                            onBackPressed();
+                            super.onPostExecute(aVoid);
+                        }
+                    };
+                    sendMail.execute();
+
                 } catch (JSONException e) {
+                    progressDialog.dismiss();
                     e.printStackTrace();
                 }
 
@@ -104,15 +172,82 @@ public class VolunteerFormActivity extends AppCompatActivity {
 
         setSpinnerListeners();
         setTextWatchers();
+        rv_upload = findViewById(R.id.rv_upload);
+        rv_upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestMultiplePermissions();
+               /* if (PICK_FROM_GALLERY==1)
+                {
+                  openFile();
+                }*/
+            }
+        });
+    }
+    public void openImageGallery() {
+        Log.e("attachment", "open gallery permission asked");
+        if (PICK_FROM_GALLERY == 1) {
+            Log.e("attachment", "open gallery after permission granted");
+            Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(galleryIntent, 1);
+
+        }
+    }
+    public void openFile() {
+        Log.e("attachment", "open gallery permission asked");
+        if (PICK_FROM_GALLERY == 1) {
+            Intent intent = new Intent();
+            intent.setType("application/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            intent.putExtra("return-data", true);
+            startActivityForResult(
+                    Intent.createChooser(intent, "Complete action using"),
+                    PICK_FROM_GALLERY);
+        }
     }
 
-    private JSONObject collectDate() {
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (PICK_FROM_GALLERY==requestCode && data!=null) {
+
+            Log.e("attachment", "request code = " + requestCode);
+            Uri selectedImage = data.getData();
+            Log.e("attachment", " selected image uri = " );
+            String[] filePathColumn = {MediaStore.Files.FileColumns.MIME_TYPE};
+            Log.e("attachment", "filePathColumn = " + filePathColumn);
+            Cursor cursor = this.getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+            Log.e("attachment", "cursor  = " + cursor);
+            if (cursor == null) { // Source is Dropbox or other similar local file path
+                attachment = selectedImage.getPath();
+            } else {
+                cursor.moveToFirst();
+                columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                Log.e("attachment", "coumn index  = " + columnIndex);
+                attachment = cursor.getString(columnIndex);
+                Log.e("attachment", "" + attachment);
+                // attachment = Commons.getPath(selectedImage,context);
+                Log.e("attachment", "" + attachment);
+                URI = Uri.parse("content://" + attachment);
+
+                attachment = FileUtils.getPath(this,selectedImage);
+                Log.e("attachment", "" + attachment);
+                Log.e("attachment", "uri = " + URI);
+                cursor.close();
+                isAttached=true;
+                checkValidation();
+            }
+
+        }
+    }
+
+    private JSONObject collectData() {
         JSONObject data= new JSONObject();
         try {
             data.put("first_name",rv_name.getText().toString());
             data.put("last_name",rv_name_last.getText().toString());
             data.put("email",rv_email.getText().toString());
-            data.put("mobile",rv_mob.getText().toString());
             data.put("mobile",rv_mob.getText().toString());
             data.put("address",rv_address_1.getText().toString());
             data.put("pincode",rv_pincode.getText().toString());
@@ -127,7 +262,7 @@ public class VolunteerFormActivity extends AppCompatActivity {
         return data;
     }
 
-    String selectedState, selectedDistrict,selectedParliament,selectedAssembly;
+
 
     private void setSpinnerListeners() {
         sp_parliament.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -249,7 +384,7 @@ public class VolunteerFormActivity extends AppCompatActivity {
         }
     }
 
-    StateDistrictModel stateDistrictModel;
+
 
     private void fetchStateDistrictJson() {
         String json = null;
@@ -269,7 +404,7 @@ public class VolunteerFormActivity extends AppCompatActivity {
         }
     }
 
-    ArrayList<String> stateList;
+
 
     private void initStateSpinenr() {
         stateList = new ArrayList();
@@ -286,7 +421,7 @@ public class VolunteerFormActivity extends AppCompatActivity {
     }
 
 
-    Map<String, ArrayList<String>> pcMap = new TreeMap();
+
 
     private void preparePCMap(JSONObject dataJson) {
         pcMap.clear();
@@ -435,18 +570,10 @@ public class VolunteerFormActivity extends AppCompatActivity {
         });
     }
 
-    private Boolean isValidName = false;
-    private Boolean isValidNum = false;
-    private Boolean isValidAddress1 = false;
-    private Boolean isValidPincode = false;
-    private Boolean isValidEmail = false;
-    private Boolean isvalidState = false;
-    private Boolean isValideDistrict = false;
-    private Boolean isValideParliament = false;
-    private Boolean isValideAssembly = false;
+
 
     private void checkValidation() {
-        if (isValidName && isValidEmail && isValidNum && isValidAddress1 && isValidPincode && isvalidState && isValideDistrict && isValideParliament && isValideAssembly) {
+        if (isAttached&&isValidName && isValidEmail && isValidNum && isValidAddress1 && isValidPincode && isvalidState && isValideDistrict && isValideParliament && isValideAssembly) {
             rv_save.setAlpha(1f);
             rv_save.setEnabled(true);
         } else {
@@ -455,4 +582,41 @@ public class VolunteerFormActivity extends AppCompatActivity {
         }
     }
 
+
+
+
+    private void  requestMultiplePermissions(){
+        Dexter.withActivity(VolunteerFormActivity.this)
+                .withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withListener(new MultiplePermissionsListener() {
+                    @Override
+                    public void onPermissionsChecked(MultiplePermissionsReport report) {
+                        // check if all permissions are granted
+                        if (report.areAllPermissionsGranted()) {
+                            PICK_FROM_GALLERY = 1;
+                            openFile();
+                        }
+
+                        // check for permanent denial of any permission
+                        if (report.isAnyPermissionPermanentlyDenied()) {
+                            // show alert dialog navigating to Settings
+                            Toast.makeText(VolunteerFormActivity.this, "permission Denied by user", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                        token.continuePermissionRequest();
+                    }
+                }).
+                withErrorListener(new PermissionRequestErrorListener() {
+                    @Override
+                    public void onError(DexterError error) {
+                        Toast.makeText(VolunteerFormActivity.this, "Some Error! ", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .onSameThread()
+                .check();
+    }
 }

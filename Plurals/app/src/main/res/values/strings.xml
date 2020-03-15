@@ -24,4 +24,6 @@
     <string name="fb_login_protocol_scheme">fb139060064069322</string>
     <string name="purpose">(Please write in max. 100 words that what is your motivation for joining)</string>
     <string name="pc_ac_details"><![CDATA[Parliament & Assembly Details]]></string>
+    <string name="upload">(Please upload image/pdf/docx that what is your motivation for joining)</string>
+
 </resources>

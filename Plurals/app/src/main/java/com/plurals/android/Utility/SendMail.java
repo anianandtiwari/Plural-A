@@ -72,7 +72,7 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
         //progressDialog = ProgressDialog.show(context,"Sending message","Please wait...",false);
     }
 
-    @Override
+   /* @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         //Dismissing the progress dialog
@@ -81,7 +81,7 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
 
         //Showing a success message
        // Toast.makeText(context,"Thanks!!"+"\n"+"your content has been sent for Review", Toast.LENGTH_LONG).show();
-    }
+    }*/
 
     @Override
     protected Void doInBackground(Void... params) {
@@ -120,13 +120,13 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
             messagebody.setText(message);
 
             Multipart multipart = new MimeMultipart();
-            /*if (attachment!=null) {
+            if (attachment!=null) {
                 MimeBodyPart mimeBodyPart = new MimeBodyPart();
                 DataSource source = new FileDataSource(attachment);
                 mimeBodyPart.setDataHandler(new DataHandler(source));
                 mimeBodyPart.setFileName(new File(attachment).getName());
                 multipart.addBodyPart(mimeBodyPart);
-            }*/
+            }
 
             multipart.addBodyPart(messagebody);
 

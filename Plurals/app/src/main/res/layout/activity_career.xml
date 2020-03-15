@@ -391,80 +391,44 @@
                         <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="7dp"
+                            android:layout_marginRight="3dp"
                             android:layout_weight="1"
                             android:background="@drawable/curved_edittext"
-                            android:paddingTop="8dp"
-                            android:paddingBottom="16dp"
-
+                            android:paddingVertical="12dp"
                             >
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/ti_state"
-                                style="@style/TextLabel"
+                            <Spinner
+                                android:id="@+id/sp_state"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:paddingHorizontal="8dp"
-                                android:textColorHint="@color/inactive_tab_text">
-
-                                <EditText
-                                    android:id="@+id/rv_state"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:background="#ECECEC"
-                                    android:fontFamily="@font/montserrat_medium"
-                                    android:gravity="start"
-                                    android:hint="State"
-                                    android:inputType="textCapSentences"
-                                    android:paddingLeft="19dp"
-                                    android:paddingTop="2dp"
-                                    android:paddingRight="16dp"
-                                    android:textSize="12sp" />
-
-                            </com.google.android.material.textfield.TextInputLayout>
-
+                                android:layout_marginHorizontal="10dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.502"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.498"/>
 
                         </FrameLayout>
 
                         <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="7dp"
+                            android:layout_marginLeft="3dp"
                             android:layout_weight="1"
                             android:background="@drawable/curved_edittext"
-                            android:paddingTop="8dp"
-                            android:paddingBottom="16dp"
-
+                            android:paddingVertical="12dp"
                             >
-
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:id="@+id/ti_city"
-                                style="@style/TextLabel"
+                            <Spinner
+                                android:id="@+id/sp_district"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:paddingHorizontal="8dp"
-                                android:textColorHint="@color/inactive_tab_text">
-
-                                <EditText
-                                    android:id="@+id/rv_city"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:background="#ECECEC"
-                                    android:fontFamily="@font/montserrat_medium"
-                                    android:gravity="start"
-                                    android:hint="City"
-                                    android:inputType="textCapSentences"
-                                    android:paddingLeft="19dp"
-                                    android:paddingTop="2dp"
-                                    android:paddingRight="16dp"
-                                    android:textSize="12sp" />
-
-                            </com.google.android.material.textfield.TextInputLayout>
-
+                                android:layout_marginHorizontal="10dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.502"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.498"/>
 
                         </FrameLayout>
 
@@ -473,78 +437,7 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:gravity="start"
-                    android:text="Statement For Purpose"
-                    android:textColor="#EDEDED"
-                    android:textSize="13sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:gravity="start"
-                    android:text="@string/purpose"
-                    android:textColor="#C1C0C0"
-                    android:textSize="11sp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/curved_form_rectangle"
-                    android:orientation="vertical"
-                    android:layout_marginBottom="16dp"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="16dp"
-                    android:visibility="visible">
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/curved_edittext"
-                        android:paddingTop="8dp"
-                        android:paddingBottom="16dp"
-
-                        >
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/ti_purpose"
-                            style="@style/TextLabel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:paddingHorizontal="8dp"
-                            android:textColorHint="@color/inactive_tab_text">
-
-                            <EditText
-                                android:id="@+id/rv_purpose"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:background="#ECECEC"
-                                android:fontFamily="@font/montserrat_medium"
-                                android:gravity="start"
-                                android:inputType="textCapSentences"
-
-                                android:minHeight="50dp"
-                                android:paddingLeft="19dp"
-                                android:paddingTop="2dp"
-                                android:paddingRight="16dp"
-                                android:textSize="12sp" />
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-
-                    </FrameLayout>
-
-
-                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -568,6 +461,7 @@
                     android:visibility="visible">
 
                     <Button
+                        android:id="@+id/rv_upload"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAllCaps="false"
@@ -584,3 +478,77 @@
 
     </RelativeLayout>
 </FrameLayout>
+<!--
+
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="10dp"
+android:fontFamily="@font/montserrat_medium"
+android:gravity="start"
+android:text="Statement For Purpose"
+android:textColor="#EDEDED"
+android:textSize="13sp" />
+
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="2dp"
+android:fontFamily="@font/montserrat_regular"
+android:gravity="start"
+android:text="@string/purpose"
+android:textColor="#C1C0C0"
+android:textSize="11sp" />
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="10dp"
+android:background="@drawable/curved_form_rectangle"
+android:orientation="vertical"
+android:layout_marginBottom="16dp"
+android:paddingHorizontal="16dp"
+android:paddingVertical="16dp"
+android:visibility="visible">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/curved_edittext"
+    android:paddingTop="8dp"
+    android:paddingBottom="16dp"
+
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_purpose"
+        style="@style/TextLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:textColorHint="@color/inactive_tab_text">
+
+        <EditText
+            android:id="@+id/rv_purpose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="#ECECEC"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="start"
+            android:inputType="textCapSentences"
+
+            android:minHeight="50dp"
+            android:paddingLeft="19dp"
+            android:paddingTop="2dp"
+            android:paddingRight="16dp"
+            android:textSize="12sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</FrameLayout>
+
+
+</LinearLayout>-->
