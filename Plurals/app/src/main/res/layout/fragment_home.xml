@@ -60,20 +60,20 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="300dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-30dp"
                 android:layout_marginTop="35dp"
                 android:id="@+id/cv_membership"
                 android:layout_marginRight="50dp"
-                app:cardBackgroundColor="#739C43"
-                android:visibility="invisible"
+                app:cardBackgroundColor="#108D7A"
+                android:visibility="visible"
                 app:cardCornerRadius="30dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:gravity="center_vertical"
                     android:paddingStart="30dp"
                     android:orientation="horizontal"
@@ -83,7 +83,8 @@
                         android:id="@+id/membership_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
+
+                        android:gravity="start"
                         android:fontFamily="@font/montserrat_regular"
                         android:text="Party Membership"
                         android:textColor="#fff"
@@ -112,7 +113,7 @@
                 android:layout_gravity="end"
                 android:layout_marginTop="26dp"
                 android:id="@+id/cv_volunteer"
-                app:cardBackgroundColor="#EEE0842F"
+                app:cardBackgroundColor="#A3954C"
                 app:cardCornerRadius="30dp">
 
                 <LinearLayout
@@ -164,8 +165,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:gravity="center_vertical"
-
                     android:orientation="horizontal"
+                    android:paddingStart="5dp"
                     android:paddingVertical="8dp">
 
                     <TextView

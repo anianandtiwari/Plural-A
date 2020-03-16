@@ -21,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -83,6 +84,8 @@ public class CareerActivity extends AppCompatActivity {
     int columnIndex;
     static Uri URI = null;
     SharedPref sharedPref = SharedPref.getInstance();
+    ImageView career_image;
+    ImageButton career_camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +121,8 @@ public class CareerActivity extends AppCompatActivity {
             }
             else { firstName = fullName.substring(0, idx);
                 lastName = fullName.substring(idx + 1);}
-
+        career_camera = findViewById(R.id.career_imagebutton);
+            career_image = findViewById(R.id.career_image);
         sp_district = findViewById(R.id.sp_district);
         sp_state = findViewById(R.id.sp_state);
         rv_save = findViewById(R.id.rv_save);
@@ -190,6 +194,17 @@ public class CareerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 requestMultiplePermissions();
+            }
+        });
+        career_camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent camIntent = new Intent("android.media.action.IMAGE_CAPTURE");
+                Intent gallIntent=new Intent(Intent.ACTION_GET_CONTENT);
+                gallIntent.setType("image/*");
+                Intent chooser = Intent.createChooser(gallIntent, "Some text here");
+                chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] { camIntent });
+                startActivityForResult(chooser, 1);
             }
         });
 
