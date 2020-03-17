@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -48,6 +49,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,6 +57,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CareerActivity extends AppCompatActivity {
     ImageView back_button;
@@ -78,14 +82,19 @@ public class CareerActivity extends AppCompatActivity {
     private Boolean isValidEmail = false;
     private Boolean isvalidState = false;
     private Boolean isValideDistrict = false;
-    private Boolean isAttached = false;
+    private Boolean isFile1Attached = false;
+    private Boolean isFile2Attached = false;
     private ProgressDialog progressDialog;
-    static int PICK_FROM_GALLERY = 0;
+    private Boolean isProfilePicUpload = false;
+    static int PICK_FROM_GALLERY3 = 0;
+    static int PICK_FROM_FILE1 = 0;
+    static int PICK_FROM_FILE2 = 0;
     int columnIndex;
     static Uri URI = null;
     SharedPref sharedPref = SharedPref.getInstance();
-    ImageView career_image;
+    CircleImageView career_image;
     ImageButton career_camera;
+    private Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,7 +194,7 @@ public class CareerActivity extends AppCompatActivity {
         rv_uploadcv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requestMultiplePermissions();
+                requestMultiplePermissions(2);
 
             }
         });
@@ -193,42 +202,58 @@ public class CareerActivity extends AppCompatActivity {
         rv_uploadsop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                requestMultiplePermissions();
+                requestMultiplePermissions(1);
             }
         });
         career_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent camIntent = new Intent("android.media.action.IMAGE_CAPTURE");
-                Intent gallIntent=new Intent(Intent.ACTION_GET_CONTENT);
-                gallIntent.setType("image/*");
-                Intent chooser = Intent.createChooser(gallIntent, "Some text here");
-                chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] { camIntent });
-                startActivityForResult(chooser, 1);
+                requestMultiplePermissions(3);
+
             }
         });
 
     }
 
-    public void openFile() {
+    public void openGallery() {
         Log.e("attachment", "open gallery permission asked");
-        if (PICK_FROM_GALLERY == 1) {
+        if (PICK_FROM_GALLERY3 == 3) {
+            Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(galleryIntent, PICK_FROM_GALLERY3);
+        }
+        else {requestMultiplePermissions(3);}
+    }
+    public void openFile(int id) {
+        Log.e("attachment", "open gallery permission asked");
+        if (id == 1) {
             Intent intent = new Intent();
             intent.setType("application/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
             intent.putExtra("return-data", true);
             startActivityForResult(
                     Intent.createChooser(intent, "Complete action using"),
-                    PICK_FROM_GALLERY);
+                    PICK_FROM_FILE1);
         }
+        else if (id == 2) {
+            Intent intent = new Intent();
+            intent.setType("application/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            intent.putExtra("return-data", true);
+            startActivityForResult(
+                    Intent.createChooser(intent, "Complete action using"),
+                    PICK_FROM_FILE2);
+        }
+
     }
+
 
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (PICK_FROM_GALLERY==requestCode && data!=null) {
-
-            Log.e("attachment", "request code = " + requestCode);
+        if (PICK_FROM_FILE1==requestCode && data!=null) {
+            Log.e("attachment", "file 1 sop");
+            Log.e("attachment", "request code = " + requestCode +"result code = "+resultCode);
             Uri selectedImage = data.getData();
             Log.e("attachment", " selected image uri = " );
             String[] filePathColumn = {MediaStore.Files.FileColumns.MIME_TYPE};
@@ -237,6 +262,7 @@ public class CareerActivity extends AppCompatActivity {
             Log.e("attachment", "cursor  = " + cursor);
             if (cursor == null) { // Source is Dropbox or other similar local file path
                 attachment = selectedImage.getPath();
+
             } else {
                 cursor.moveToFirst();
                 columnIndex = cursor.getColumnIndex(filePathColumn[0]);
@@ -251,10 +277,56 @@ public class CareerActivity extends AppCompatActivity {
                 Log.e("attachment", "" + attachment);
                 Log.e("attachment", "uri = " + URI);
                 cursor.close();
-                isAttached=true;
+                isFile1Attached=true;
                 checkValidation();
             }
 
+        }
+        else if (PICK_FROM_FILE2==requestCode && data!=null) {
+            Log.e("attachment", "file 2 cv ");
+            Log.e("attachment", "request code = " + requestCode +"result code = "+resultCode);
+            Uri selectedImage = data.getData();
+            Log.e("attachment", " selected image uri = " );
+            String[] filePathColumn = {MediaStore.Files.FileColumns.MIME_TYPE};
+            Log.e("attachment", "filePathColumn = " + filePathColumn);
+            Cursor cursor = this.getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+            Log.e("attachment", "cursor  = " + cursor);
+            if (cursor == null) { // Source is Dropbox or other similar local file path
+                attachment = selectedImage.getPath();
+
+            } else {
+                cursor.moveToFirst();
+                columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                Log.e("attachment", "coumn index  = " + columnIndex);
+                attachment = cursor.getString(columnIndex);
+                Log.e("attachment", "" + attachment);
+                // attachment = Commons.getPath(selectedImage,context);
+                Log.e("attachment", "" + attachment);
+                URI = Uri.parse("content://" + attachment);
+
+                attachment = FileUtils.getPath(this,selectedImage);
+                Log.e("attachment", "" + attachment);
+                Log.e("attachment", "uri = " + URI);
+                cursor.close();
+                isFile2Attached=true;
+                checkValidation();
+            }
+
+        }
+        else if (PICK_FROM_GALLERY3==requestCode && data!=null) {
+            Log.e("attachment", "gallery ");
+            Log.e("attachment", "request code = " + requestCode);
+            Uri selectedImage = data.getData();
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(CareerActivity.this.getContentResolver(), selectedImage);
+                career_image.setImageBitmap(bitmap);
+                Log.e("attachment", "try  = ");
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.e("attachment", "catchh  = ");
+            }
+            isProfilePicUpload=true;
+                checkValidation();
         }
     }
 
@@ -487,7 +559,7 @@ public class CareerActivity extends AppCompatActivity {
 
 
     private void checkValidation() {
-        if (isAttached && isValidName && isValidEmail && isValidNum && isValidAddress1 && isValidPincode && isvalidState && isValideDistrict) {
+        if (isProfilePicUpload && isFile2Attached && isFile2Attached && isValidName && isValidEmail && isValidNum && isValidAddress1 && isValidPincode && isvalidState && isValideDistrict) {
             rv_save.setAlpha(1f);
             rv_save.setEnabled(true);
         } else {
@@ -502,7 +574,7 @@ public class CareerActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    private void  requestMultiplePermissions(){
+    private void  requestMultiplePermissions(final int id){
         Dexter.withActivity(CareerActivity.this)
                 .withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE)
                 .withListener(new MultiplePermissionsListener() {
@@ -510,8 +582,19 @@ public class CareerActivity extends AppCompatActivity {
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
                         // check if all permissions are granted
                         if (report.areAllPermissionsGranted()) {
-                            PICK_FROM_GALLERY = 1;
-                            openFile();
+                            if (id==1) {
+                                PICK_FROM_FILE1 = 1;
+                                openFile(id);
+                            }
+                            else if (id==2)
+                            {
+                                PICK_FROM_FILE2 =2;
+                                openFile(id);
+                            }
+                            else if(id==3){
+                                PICK_FROM_GALLERY3=3;
+                                openGallery();
+                            }
                         }
 
                         // check for permanent denial of any permission
