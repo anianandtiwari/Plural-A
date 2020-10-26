@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
     }
     private Runnable mUpdateTimeTask = new Runnable() {
         public void run() {
-            if (sharedPref.isLogin(SplashActivity.this)) {
+            if (sharedPref.isLogin(SplashActivity.this)||true) {
                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();

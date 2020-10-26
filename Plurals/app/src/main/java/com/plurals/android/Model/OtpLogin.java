@@ -8,16 +8,16 @@ public class OtpLogin {
      * data : {"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZ2FhdGhhb25haXIuY29tIiwiaWF0IjoxNTcwNzY5OTkwLCJuYmYiOjE1NzA3Njk5OTAsImV4cCI6MTU3MTYzMzk5MCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiNTI1In19fQ.BYn5Oqw6a3oKHKVnrHQELl_o50FSIQDPd8ofYk1RaAs","user_email":"","user_nicename":"9555203470","user_display_name":"9555203470","profile_image_url":""}
      */
 
-    private String success;
+    private String status;
     private String message;
     private DataBean data;
 
-    public String isSuccess() {
-        return success;
+    public String getStatus() {
+        return status;
     }
 
-    public void setSuccess(String success) {
-        this.success = success;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getMessage() {

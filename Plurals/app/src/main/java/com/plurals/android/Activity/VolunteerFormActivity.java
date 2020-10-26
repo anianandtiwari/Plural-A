@@ -203,6 +203,11 @@ public class VolunteerFormActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void volunteerSubmit()
+    {
+
+    }
     public void openImageGallery() {
         Log.e("attachment", "open gallery permission asked");
         if (PICK_FROM_GALLERY == 1) {

@@ -8,11 +8,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -23,8 +30,14 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.plurals.android.Model.GenerateOtp;
+import com.plurals.android.Model.User;
 import com.plurals.android.R;
 import com.plurals.android.Utility.CommonUtils;
+import com.plurals.android.Utility.Constants;
+import com.plurals.android.Utility.CustomRequest;
 import com.plurals.android.Utility.SendMail;
 import com.plurals.android.Utility.SharedPref;
 
@@ -59,6 +72,13 @@ public class OtpActivity extends AppCompatActivity {
         otp_submit = findViewById(R.id.otp_submit);
         otp_mob.setText(sharedPref.getMob(OtpActivity.this));
         otp_mob.setEnabled(false);
+
+
+      /*  Intent intent = new Intent(OtpActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+*/
+
         progressDialog = new ProgressDialog(OtpActivity.this);
         progressDialog.setMessage("Submitting...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -84,8 +104,8 @@ public class OtpActivity extends AppCompatActivity {
                     snackBar(view,"Fields can't be empty");
                 }
                 else {
-                    progressDialog.show();
-                    String msg = "Name = "+name+"\nEmail = "+email+"\nMobile = "+mob+"\nLogin type = "+type;
+
+                   /* String msg = "Name = "+name+"\nEmail = "+email+"\nMobile = "+mob+"\nLogin type = "+type;
                     SendMail sendMail = new SendMail(OtpActivity.this,"Login Response",msg){
                         @Override
                         protected void onPostExecute(Void aVoid) {
@@ -97,7 +117,12 @@ public class OtpActivity extends AppCompatActivity {
                             super.onPostExecute(aVoid);
                         }
                     };
-                    sendMail.execute();
+                    sendMail.execute();*/
+                    try {
+                        userDetailSubmit(mob,name,email,1,"","");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -151,8 +176,9 @@ public class OtpActivity extends AppCompatActivity {
                                 "Email - "+fb_email +"\n"+
                                 "mobile no. - "+sharedPref.getMob(OtpActivity.this) +"\n"+
                                 "Image Link - "+fb_image +"\nMobile no = "+sharedPref.getMob(OtpActivity.this);
-                        SendMail sendMail = new SendMail(OtpActivity.this,"Logged in Response",message);
-                        sendMail.execute();
+                      /*  SendMail sendMail = new SendMail(OtpActivity.this,"Logged in Response",message);
+                        sendMail.execute();*/
+                      userDetailSubmit(sharedPref.getMob(OtpActivity.this) ,fb_name,fb_email,2,"",fb_image);
                         dashboard();
 
                     } catch (Exception e) {
@@ -186,6 +212,69 @@ public class OtpActivity extends AppCompatActivity {
         Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show();
 
     }
+    public void userDetailSubmit(String mob , String name , String mail , int type , String adress , String image) throws JSONException {
+        progressDialog.show();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("mobileno",mob);
+        jsonObject.put("username",name);
+        jsonObject.put("mailid",mail);
+        jsonObject.put("typeid",type);
+        jsonObject.put("address",adress);
+        jsonObject.put("image",image);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.networkUrl+"saveuser", jsonObject,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("otpActivity",response.toString());
+                        progressDialog.dismiss();
+                          try {
+                            if (response.getInt("status")==201) {
+                                User user = new Gson().fromJson(response.toString(), User.class);
+                                sharedPref.saveMob(OtpActivity.this, user.getData().getMobileno());
+                                sharedPref.saveCredentials(OtpActivity.this,user.getData().getMailid(), user.getData().getUsername(),user.getData().getImage(), true);
+                                Intent intent = new Intent(OtpActivity.this,MainActivity.class);
+                                startActivity(intent);
+                                finish();
+
+                            } else if(response.getInt("status")==406){
+                                toast_msg(response.getString("message"));
+                            }
+
+                            else {
+                                toast_msg("Server Error");
+                            }
+                        } catch (JSONException e) {
+                            Log.d("otpActivity","catch");
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+               progressDialog.dismiss();
+                Log.d("otpActivity",""+error.networkResponse.statusCode);
+            }
+
+
+        });
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+                12000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        CustomRequest.getInstance(OtpActivity.this).addToRequestQue(jsonObjectRequest);
+
+
+    }
+
+    public void toast_msg(String msg) {
+        Toast toast = Toast.makeText(this.getApplicationContext(), msg, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+    }
+
     public void dashboard()
     {
         Intent intent = new Intent(OtpActivity.this, MainActivity.class);

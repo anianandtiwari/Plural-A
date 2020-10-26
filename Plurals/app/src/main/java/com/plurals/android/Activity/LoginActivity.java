@@ -29,8 +29,11 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.plurals.android.Model.GenerateOtp;
 import com.plurals.android.Model.OtpLogin;
+import com.plurals.android.Model.User;
 import com.plurals.android.R;
+import com.plurals.android.Utility.Constants;
 import com.plurals.android.Utility.CustomRequest;
 import com.plurals.android.Utility.SharedPref;
 import com.facebook.AccessToken;
@@ -83,7 +86,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
     public void showDialog(String description) {
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -128,22 +130,20 @@ public class LoginActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, "https://gaathaonair.com/wp-json/gathaa/v1/send-otp", object_mob,
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.networkUrl + "generateOtp", object_mob,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
                             getotp_Pd.dismiss();
-                            try {
-                                String status = response.getString("success");
-                                Log.d("otp", status);
-                                if (status.equalsIgnoreCase("true")) {
-                                    showDialog(mobile);
-                                } else {
-                                    toast_msg("Server Error");
-                                }
 
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                            GenerateOtp generateOtp = new Gson().fromJson(response.toString(), GenerateOtp.class);
+                            int status = generateOtp.getStatus();
+                            Log.d("otp", "" + status);
+                            if (status == 200) {
+                                toast_msg(generateOtp.getMessage());
+                                showDialog(mobile);
+                            } else {
+                                toast_msg(generateOtp.getMessage());
                             }
                         }
                     }, new Response.ErrorListener() {
@@ -152,7 +152,6 @@ public class LoginActivity extends AppCompatActivity {
                     error.printStackTrace();
                     getotp_Pd.dismiss();
                     toast_msg("Invalid mobile no.");
-                    Log.d("Reserterror0", "error in reseting pwd ");
                     // networkCall(email);
                 }
 
@@ -169,39 +168,56 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void otpVerificationCall(String mobile, String otp) {
-        if (otp.length() < 4) {
-            toast_msg("Entered otp is wrong");
+        if (otp.length() < 6) {
+            toast_msg("Enter valid otp");
         } else {
-             dialog.dismiss();
             getotp_Pd.show();
             final JSONObject object_mob = new JSONObject();
+            Intent intent = new Intent(LoginActivity.this, OtpActivity.class);
+            startActivity(intent);
+            finish();
             try {
                 object_mob.put("mobile", mobile);
-                object_mob.put("otp", otp);
+                object_mob.put("verifycode", otp);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, "https://gaathaonair.com/wp-json/gathaa/v1/signup-otp", object_mob,
+            Log.d("otpActivity-else",Constants.networkUrl+"verifyotp");
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Constants.networkUrl+"verifyotp", object_mob,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
+                            Log.d("otpActivity-else",response.toString());
                             getotp_Pd.dismiss();
                             try {
-                                boolean success = response.getBoolean("success");
-                                if (success) {
-                                    OtpLogin otpLogin = new Gson().fromJson(response.toString(), OtpLogin.class);
-                                    Log.d("otpActivity", otpLogin.getData().toString());
-                                    //toast_msg(otpLogin.getData().getUser_display_name());
-                                    sharedPref.saveMob(LoginActivity.this, otpLogin.getData().getUser_display_name());
+                                if (response.getInt("status")==202) {
+                                    dialog.dismiss();
+                                    GenerateOtp generateOtp = new Gson().fromJson(response.toString(), GenerateOtp.class);
+                                    Log.d("otpActivity-else","response 202");
+                                    sharedPref.saveMob(LoginActivity.this, generateOtp.getData().getOtpmobilenumber());
                                     Intent intent = new Intent(LoginActivity.this, OtpActivity.class);
                                     startActivity(intent);
                                     finish();
                                     //finishAffinity();
-                                } else {
-                                    Log.d("otpActivity-else", "" + success);
-                                    toast_msg("Wrong Otp");
+                                } else if(response.getInt("status")==302){
+                                    dialog.dismiss();
+                                    Log.d("otpActivity-else","response 202");
+                                    User user = new Gson().fromJson(response.toString(), User.class);
+                                    sharedPref.saveMob(LoginActivity.this, user.getData().getMobileno());
+                                    sharedPref.saveCredentials(LoginActivity.this,user.getData().getMailid(), user.getData().getUsername(),user.getData().getImage(), true);
+                                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                    startActivity(intent);
+                                    toast_msg(user.getMessage());
+                                }
+                                else if (response.getInt("status")==404){
+                                    Log.d("otpActivity-else","response 404");
+                                    toast_msg(response.getString("message"));
+                                }
+                                else {
+                                    toast_msg("Server Error");
                                 }
                             } catch (JSONException e) {
+                                Log.d("otpActivity-else","catch");
                                 e.printStackTrace();
                             }
 
@@ -211,6 +227,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onErrorResponse(VolleyError error) {
                     error.printStackTrace();
                     getotp_Pd.dismiss();
+                    Log.d("otpActivity-else",""+error.networkResponse.statusCode);
                     toast_msg("Wrong otp");
                 }
 

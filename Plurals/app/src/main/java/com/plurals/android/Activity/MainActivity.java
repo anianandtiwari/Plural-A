@@ -66,15 +66,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         try {
             user_name.setText(sharedPref.getUser_username(this));
             String imageUrl = sharedPref.getUser_image(this);
-            if (!(imageUrl == "" || imageUrl == null)) {
+            Log.d("mainactivity","image url "+ imageUrl);
+            if (!(imageUrl.isEmpty() || imageUrl == null)) {
+                Log.d("mainactivity","try-if");
                 Picasso.get()
                         .load(imageUrl)
                         .placeholder(R.drawable.plu_white)
                         .error(R.drawable.plu_white)
                         .into(user_image);
             } else {
+                Log.d("mainactivity","try-else");
                 user_image.setImageResource(R.drawable.plu_white);
             }
+            Log.d("mainactivity","email"+sharedPref.getUser_email(this));
             user_email.setText(sharedPref.getUser_email(this));
         } catch (Exception e) {
 
@@ -91,12 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
          //NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }*/
+
 
     @Override
     public boolean onSupportNavigateUp() {

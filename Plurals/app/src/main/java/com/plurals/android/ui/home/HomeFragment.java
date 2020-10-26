@@ -111,7 +111,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             context.getPackageManager()
                     .getPackageInfo("com.facebook.katana", 0); //Checks if FB is even installed.
             return new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("fb://facewebmodal/fhref=" + id)); //Trys to make intent with FB's URI
+                    Uri.parse("fb://facewebmodal/f?href=" + id)); //Trys to make intent with FB's URI
         } catch (Exception e) {
             Log.d("fb_app", "inside catch");
             return new Intent(Intent.ACTION_VIEW,
